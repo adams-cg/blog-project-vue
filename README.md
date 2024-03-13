@@ -1,2 +1,2 @@
-# penta-ecommerce
-E-commerce in Vue.js | Progetto finale per corso Front-end
+# ADAM Blog
+Blog in Vue.js | Progetto per portfolio post corso front-end
