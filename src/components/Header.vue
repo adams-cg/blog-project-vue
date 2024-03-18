@@ -7,10 +7,12 @@
             </div>
             <!-- navigazione -->
             <div class="flex text-[20px] gap-8 font-semibold">
-                <button>Home</button>
+                <RouterLink to="home">Home</RouterLink>
                 <button>Articoli</button>
                 <button>Guide</button>
-                <button>Zona Marcello</button>
+                <RouterLink to="frontend">Frontend</RouterLink>
+                <button>Backend</button>
+                <button>Dev.map()</button>
             </div>
             <!-- logo aziendale -->
             <div>
@@ -21,6 +23,8 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
     export default {
         
     }
