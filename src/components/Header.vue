@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-[#213546] text-[#f1f1f1] border-b-8 border-[#42b983] h-[100px] w-screen flex items-center">
+    <header class="bg-[#213546] z-50 text-[#f1f1f1] h-[100px] w-screen flex flex-col justify-center items-center">
         <nav class="w-full flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
@@ -18,27 +18,39 @@
             </div>
             <div class="lg:hidden flex items-center">
                 <button class="w-6 h-6" @click="showMenu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <svg v-if="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#ffffff"
                             d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
                     </svg>
+                    <svg v-else xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path fill="#ffffff"
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
                 </button>
-                <div v-show="menu" class="flex flex-col">
+            </div>
+        </nav>
+        <Transition name="slide-fade">
+            <div v-if="!menu"
+                class="bg-purple-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute border-b-8 border-[#42b983] font-semibold lg:gap-8">
+
+                <div  class="text-black flex flex-col gap-3 py-5">
                     <button class="">Home</button>
                     <button class="">Articoli</button>
                     <button class="">Guide</button>
                     <button class="">Zona Marcello</button>
                 </div>
+
             </div>
-        </nav>
+        </Transition>
     </header>
+    <div v-if="menu" class="border-b-8 border-[#42b983]"></div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            menu: false
+            menu: true
         }
     },
     methods: {

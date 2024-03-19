@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease-in;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.2s ease-out;
+  opacity: 0;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transition: all 0.5s ease-out;
+  opacity: 0;
+}
+
+
+
+
