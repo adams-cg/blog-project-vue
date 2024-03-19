@@ -1,8 +1,8 @@
 <template>
   <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
     <Slide v-for="(image, index) in images" :key="index">
-      <div class="bg-red-500 w-[200px] h-[200px]">
-        <img :src=image alt="Slide Image">
+      <div class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
+        <img :src=image alt="Slide Image" class="w-[150px] h-[150px] object-contain">
       </div>
     </Slide>
 
@@ -36,8 +36,13 @@ export default defineComponent({
     breakpoints: {
       // 700px and up
       700: {
-        itemsToShow: 3.5,
-        snapAlign: 'center',
+        itemsToShow: 2,
+        snapAlign: 'start',
+      },
+      // 800px and up
+      850:{  
+        itemsToShow: 3,
+        snapAlign: 'start',
       },
       // 1024 and up
       1024: {
@@ -45,12 +50,19 @@ export default defineComponent({
         snapAlign: 'start',
       },
     },
-    images: [
-       "/src/assets/logos_html-5.png",
-      '/src/assets/logos_css-3.png',
-      '/src/assets/logos_html-5.png',
-      // Add more image paths as needed
-    ],
+    images: [  
+        "src/assets/logos_html-5.png",
+        "src/assets/logos_css-3.png",
+        "src/assets/logos_javascript.png",
+        "src/assets/logos_nodejs.png",
+        "src/assets/logos_pinia.png",
+        "src/assets/logos_sanity.png",
+        "src/assets/logos_visual-studio-code.png",
+        "src/assets/logos_vue.png",
+        "src/assets/mdi_github.png",
+        "src/assets/Vector.png"
+    ]
+    
   }),
 })
 </script>
