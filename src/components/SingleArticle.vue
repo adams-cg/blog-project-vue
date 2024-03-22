@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center h-screen">
+    <div class="flex justify-center items-center">
         <div>
 
             <!-- descrizione -->
@@ -17,7 +17,7 @@
                 <div class="bg-black w-[400px] h-[600px] rounded-[30px] ">
                     <!-- bg image -->
                     <div @mouseover="hover" @mouseleave="nohover" :id="opaci"
-                        class="w-[400px] h-[600px] rounded-[30px]  duration-700 bg-[url('./assets/imgprova.jfif')] bg-cover">
+                        class="w-[400px] h-[600px] rounded-[30px]  duration-700  bg-cover" :style="{ 'background-image': 'url(' + img + ')' }">
                         <!-- article/button -->
 
                         <div @mouseover="hover" @mouseleave="nohover"
@@ -47,7 +47,7 @@ export default {
         }
 
     },
-    props: ["titolo", "autore", "resume"
+    props: ["titolo", "autore", "resume", "img"
     ],
 
     methods: {

@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-[#213546] z-50 text-[#f1f1f1] h-[100px] w-screen flex flex-col justify-center items-center">
+    <header class="bg-[#213546] z-50 text-[#f1f1f1] h-[100px] w-full flex flex-col justify-center items-center">
         <nav class="w-full flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
