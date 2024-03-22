@@ -4,7 +4,8 @@
 
             <!-- descrizione -->
             <div class="pl-[10px]">
-            <div class="font-bold text-[30px] mb-[-5px]">Article React</div>
+                <!-- TITOLO -->
+            <div class="font-bold text-[30px] mb-[-5px]">{{ titolo }}</div>
 
             <div class="font-semibold pb-[10px]"> <span class="font-bold text-[20px] pr-[10px]">Autore:</span>
                 <span class="text-[18px]">Davide Genovese</span>
@@ -56,6 +57,8 @@ export default {
         }
 
     },
+    props:["titolo", "autore",
+],
 
     methods: {
         hover() {
