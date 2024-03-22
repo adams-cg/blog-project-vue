@@ -45,6 +45,11 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'resume',
+      title: 'Resume',
+      type: 'blockContent'
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
