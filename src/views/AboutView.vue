@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-col ml-3 lg:mt-20 lg:mx-52">
         <div>
-            <h1 class="text-[65px] md:text-center lg:text-start md:mt-[50px] font-extrabold">About Us</h1>
+            <h1 class="text-[65px] md:text-center xl:text-start md:mt-[50px] font-extrabold">About Us</h1>
         </div>
-        <ul class="grid lg:grid-cols-4 lg:grid-rows-2 gap-10">
+        <ul class="grid md:grid-cols-2 md:gap-2 lg:gap-40 xl:grid-cols-3 xl:grid-rows-2 gap-10 xl:gap-40">
             <AboutCard nome="Andrea" cognome="Mancin" linkedin="https://www.linkedin.com/in/andreamancin/"
                 github="https://github.com/andrea-mancin" nostraEmail="andrea.mancin@outlook.com" />
             <AboutCard nome="Davide" cognome="Genovese"
