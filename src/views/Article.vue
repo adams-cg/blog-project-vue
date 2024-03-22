@@ -1,6 +1,6 @@
 <template>
     <ul class="grid gap-10 mt-12 lg:grid-cols-2 lg:gap-0 xl:grid-cols-3">
-        <li v-for="(post, index) in postsData" class=" mb-10" :key="index">
+        <li v-for="post in postsData" class=" mb-10">
         
             <SingleArticle :autore="post.author.name" :resume="post.resume.children.text" :titolo="post.title" :img="post.mainImage.asset.url" />
         </li>
