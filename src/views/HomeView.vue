@@ -48,7 +48,7 @@
       </template>
     </Carousel>
 
-    <CarouselArticoli articoli="content" />
+    <CarouselArticoli :articoli="content" />
   </main>
 </template>
 
