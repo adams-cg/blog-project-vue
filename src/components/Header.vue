@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-[#213546] z-50 text-[#f1f1f1] h-[100px] w-full flex flex-col justify-center items-center">
+    <header class="bg-white text-black shadow-lg fixed z-50  h-[100px] w-full flex flex-col justify-center items-center">
         <nav class="w-full flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
@@ -31,7 +31,7 @@
         </nav>
         <Transition name="slide-fade">
             <div v-if="!menu"
-                class="bg-purple-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute border-b-8 border-[#42b983] font-semibold lg:gap-8">
+                class="bg-purple-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
 
                 <div  class="text-black flex flex-col gap-3 py-5">
                     <button class="">Home</button>
@@ -43,20 +43,26 @@
             </div>
         </Transition>
     </header>
-    <div v-if="menu" class="border-b-8 border-[#42b983]"></div>
+
+    
 </template>
 
 <script>
 export default {
     data() {
         return {
-            menu: true
+            menu: true,
+            scrollPosition: 0,
         }
     },
     methods: {
         showMenu() {
             this.menu = !this.menu
         }
+       
+
+        
     }
+   
 }
 </script>

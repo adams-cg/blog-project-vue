@@ -1,14 +1,30 @@
 <template>
 
+<main class="px-[24px]">
   <!-- TODO: sezione articolo in evidenza -->
+  <section class="flex w-full justify-around items-center mb-[200px] pt-[150px]  ">
+    <div>
+      
+      <p class=" text-[80px] font-bold"> {{ articolo.title }}</p>
+      <p class=" text-[30px] font-semibold"> {{ articolo.resume.children.text }}</p>
 
-  <p class=" text-[200px]"> {{ articolo.title }}</p>
+      <button class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px]"> Scopri di più</button>
+
+    </div>
+
+    <img :src="articolo.mainImage.asset.url" alt="">
+
+    
+
+  </section>
+
+  
 
 
 
-  <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
+  <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints" class="mb-[200px]">
     <Slide v-for="(image, index) in images" :key="index">
-      <div class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg mb-[100px]">
+      <div class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
         <img :src=image alt="Slide Image" class="w-[150px] h-[150px] object-contain">
       </div>
     </Slide>
@@ -21,7 +37,7 @@
 
   <CarouselArticoli />
 
-
+</main>
 </template>
 
 <script>
@@ -79,7 +95,7 @@ export default defineComponent({
     articoli:[],
     articolo:{}
   }),
-  mounted() {
+  created() {
         axios.get("https://ir44xo6i.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%22post%22%5D+%7B%0A++title%2C%0A++author-%3E%7Bname%7D%2C%0A++mainImage%7B%0A++++asset-%3E%7Burl%7D%0A++%7D%2C%0A++body%5B0%5D%7Bchildren%5B0%5D%7Btext%7D%7D%2C%0A++publishedAt%2C%0A++++categories%5B0%5D-%3E%7Btitle%7D%2C%0A++++resume%5B0%5D%7Bchildren%5B0%5D%7Btext%7D%7D%2C%0A++id%0A%7D")
         .then(response => {
             
