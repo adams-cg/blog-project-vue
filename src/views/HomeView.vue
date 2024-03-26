@@ -6,10 +6,10 @@
     >
       <div>
         <p class="text-[80px] font-bold">
-          {{ content[content.length - 1].title }}
+          {{ title }}
         </p>
         <p class="text-[30px] font-semibold">
-          {{ content[content.length - 1].resume.children.text }}
+          {{ text }}
         </p>
 
         <button
@@ -19,10 +19,7 @@
         </button>
       </div>
 
-      <img
-        :src="urlFor(content[content.length - 1].mainImage.asset.url)"
-        class="col-span-full"
-      />
+      <img :src="urlImage" class="col-span-full" />
     </section>
 
     <Carousel
@@ -48,7 +45,7 @@
       </template>
     </Carousel>
 
-    <CarouselArticoli articoli="content" />
+    <CarouselArticoli :articoli="content" />
   </main>
 </template>
 
@@ -119,6 +116,9 @@ export default defineComponent({
     ],
     loading: true,
     content: [],
+    title: "",
+    text: "",
+    urlImage: "",
   }),
   created() {
     this.fetchData();
@@ -134,6 +134,10 @@ export default defineComponent({
         (content) => {
           this.loading = false;
           this.content = content;
+          this.title = content[content.length - 1].title;
+          this.text = content[content.length - 1].resume.children.text;
+          this.urlImage = content[content.length - 1].mainImage.asset.url
+
         },
         (error) => {
           this.error = error;
