@@ -1,5 +1,6 @@
 <template>
-    <header class="bg-white text-black shadow-lg fixed z-50  h-[100px] w-full flex flex-col justify-center items-center">
+    <header
+        class="bg-white text-black shadow-lg fixed z-50  h-[100px] w-full flex flex-col justify-center items-center">
         <nav class="w-full flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
@@ -7,10 +8,18 @@
             </div>
             <!-- navigazione -->
             <div class="flex text-[20px] lg:gap-8 font-semibold">
-                <button class="hidden lg:block">Home</button>
-                <button class="hidden lg:block">Articoli</button>
-                <button class="hidden lg:block">Guide</button>
-                <button class="hidden lg:block">Zona Marcello</button>
+                <RouterLink to="/">
+                    <button class="hidden lg:block">Home</button>
+                </RouterLink>
+                <RouterLink to="/article">
+                    <button class="hidden lg:block">Articoli</button>
+                </RouterLink>
+                <RouterLink to="/guides">
+                    <button class="hidden lg:block">Guide</button>
+                </RouterLink>
+                <RouterLink to="/about">
+                    <button class="hidden lg:block">About Us</button>
+                </RouterLink>
             </div>
             <!-- logo aziendale -->
             <div>
@@ -33,7 +42,7 @@
             <div v-if="!menu"
                 class="bg-purple-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
 
-                <div  class="text-black flex flex-col gap-3 py-5">
+                <div class="text-black flex flex-col gap-3 py-5">
                     <button class="">Home</button>
                     <button class="">Articoli</button>
                     <button class="">Guide</button>
@@ -44,10 +53,12 @@
         </Transition>
     </header>
 
-    
+
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
     data() {
         return {
@@ -59,10 +70,10 @@ export default {
         showMenu() {
             this.menu = !this.menu
         }
-       
 
-        
+
+
     }
-   
+
 }
 </script>

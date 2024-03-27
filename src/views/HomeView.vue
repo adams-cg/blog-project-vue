@@ -1,9 +1,7 @@
 <template>
   <main class="px-[24px]">
     <!-- TODO: sezione articolo in evidenza -->
-    <section
-      class="flex w-full justify-around items-center mb-[200px] pt-[150px]"
-    >
+    <section class="flex w-full justify-around items-center mb-[200px] pt-40">
       <div>
         <p class="text-[80px] font-bold">
           {{ title }}
@@ -12,9 +10,7 @@
           {{ text }}
         </p>
 
-        <button
-          class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px]"
-        >
+        <button class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px]">
           Scopri di più
         </button>
       </div>
@@ -22,21 +18,10 @@
       <img :src="urlImage" class="col-span-full" />
     </section>
 
-    <Carousel
-      v-bind="settings"
-      :wrap-around="true"
-      :breakpoints="breakpoints"
-      class="mb-[200px]"
-    >
+    <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints" class="mb-[200px]">
       <Slide v-for="(image, index) in images" :key="index">
-        <div
-          class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg"
-        >
-          <img
-            :src="image"
-            alt="Slide Image"
-            class="w-[150px] h-[150px] object-contain"
-          />
+        <div class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
+          <img :src="image" alt="Slide Image" class="w-[150px] h-[150px] object-contain" />
         </div>
       </Slide>
 

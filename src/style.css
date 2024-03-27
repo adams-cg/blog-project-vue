@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .slide-fade-enter-active {
   transition: all 0.5s ease-in;
 }
@@ -19,6 +17,8 @@
   opacity: 0;
 }
 
-
-
-
+.fade-enter-from,
+.fade-leave-to {
+  transition-delay: 1000ms;
+  background-color: blue;
+}

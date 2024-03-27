@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col ml-3 lg:mt-20 lg:mx-52">
+    <div class="flex flex-col ml-3 lg:pt-40 lg:mx-52">
         <div>
             <h1 class="text-[65px] md:text-center xl:text-start md:mt-[50px] font-extrabold">About Us</h1>
         </div>
