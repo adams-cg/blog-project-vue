@@ -12,11 +12,11 @@
           {{ text }}
         </p>
 
-        <button
+        <RouterLink :to="{ path: '/articolo/' + slug }"><button
           class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px] mb-10 lg:mb-0"
         >
           Scopri di più
-        </button>
+        </button></RouterLink>
       </div>
 
       <img :src="urlImage" class="col-span-full" />
@@ -57,6 +57,7 @@ import CarouselArticoli from "../components/CarouselArticoli.vue";
 import sanity from "../../sanity.js";
 const query = `*[_type == "post"]{
   title,
+  slug{current},
   author->{name},
   mainImage{
     asset->{url}
@@ -121,6 +122,7 @@ export default defineComponent({
     title: "",
     text: "",
     urlImage: "",
+    slug:""
   }),
   created() {
     this.fetchData();
@@ -136,6 +138,7 @@ export default defineComponent({
           this.title = content[0].title;
           this.text = content[0].resume.children.text;
           this.urlImage = content[0].mainImage.asset.url;
+          this.slug=content[0].slug.current
         },
         (error) => {
           this.error = error;

@@ -49,6 +49,7 @@ export default defineComponent({
         :resume="articolo.resume.children.text"
         :titolo="articolo.title"
         :img="articolo.mainImage.asset.url"
+        :slug="articolo.slug.current"
       />
     </Slide>
 
