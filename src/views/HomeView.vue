@@ -1,7 +1,9 @@
 <template>
   <main class="px-[24px]">
     <!-- TODO: sezione articolo in evidenza -->
-    <section class="flex w-full flex-col justify-around items-center mb-[200px] pt-40 lg:flex-row">
+    <section
+      class="flex w-full flex-col justify-around items-center mb-[200px] pt-40 lg:flex-row"
+    >
       <div>
         <p class="text-[80px] font-bold">
           {{ title }}
@@ -10,7 +12,9 @@
           {{ text }}
         </p>
 
-        <button class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px] mb-10 lg:mb-0">
+        <button
+          class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px] mb-10 lg:mb-0"
+        >
           Scopri di più
         </button>
       </div>
@@ -18,10 +22,21 @@
       <img :src="urlImage" class="col-span-full" />
     </section>
 
-    <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints" class="mb-[200px]">
+    <Carousel
+      v-bind="settings"
+      :wrap-around="true"
+      :breakpoints="breakpoints"
+      class="mb-[200px]"
+    >
       <Slide v-for="(image, index) in images" :key="index">
-        <div class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
-          <img :src="image" alt="Slide Image" class="w-[150px] h-[150px] object-contain" />
+        <div
+          class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg"
+        >
+          <img
+            :src="image"
+            alt="Slide Image"
+            class="w-[150px] h-[150px] object-contain"
+          />
         </div>
       </Slide>
 
@@ -50,7 +65,7 @@ const query = `*[_type == "post"]{
   publishedAt,
   categories[0]->{title},
   resume[0]{children[0]{text}},
-} | order(publishedAt desc)`;
+} | order(publishedAt desc) [0...5]`;
 
 export default defineComponent({
   name: "Breakpoints",
@@ -84,10 +99,10 @@ export default defineComponent({
         itemsToShow: 4,
         snapAlign: "start",
       },
-      1320:{  
+      1320: {
         itemsToShow: 5,
         snapAlign: "start",
-      }
+      },
     },
     images: [
       "src/assets/logos_html-5.png",
@@ -120,8 +135,7 @@ export default defineComponent({
           this.content = content;
           this.title = content[0].title;
           this.text = content[0].resume.children.text;
-          this.urlImage = content[0].mainImage.asset.url
-
+          this.urlImage = content[0].mainImage.asset.url;
         },
         (error) => {
           this.error = error;
