@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
-import Article from "../views/Article.vue";
 import GuideView from "../views/GuideView.vue";
 import Page404 from "../views/Page404.vue";
+import Articoli from "../views/Articoli.vue";
+import Articolo from "../views/Articolo.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,9 +20,9 @@ const router = createRouter({
       component: AboutView,
     },
     {
-      path: "/article",
-      name: "article",
-      component: Article,
+      path: "/articoli",
+      name: "articoli",
+      component: Articoli,
     },
     {
       path: "/guides",
@@ -33,6 +34,11 @@ const router = createRouter({
       name: "page404",
       component: Page404,
     },
+    {
+      path: "/articolo/:slug",
+      name: "articolo",
+      component: Articolo,
+    }
   ],
 });
 

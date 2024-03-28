@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col ml-3 lg:pt-40 lg:mx-52">
         <div>
-            <h1 class="text-[65px] md:text-center xl:text-start md:mt-[50px] font-extrabold">About Us</h1>
+            <h1 class="mt-[150px] text-[65px] md:text-center xl:text-start md:mt-[100px] font-extrabold">About Us</h1>
         </div>
         <ul class="grid md:grid-cols-2 md:gap-2 lg:gap-40 xl:grid-cols-3 xl:grid-rows-2 gap-10 xl:gap-40">
             <AboutCard nome="Andrea" cognome="Mancin" linkedin="https://www.linkedin.com/in/andreamancin/"

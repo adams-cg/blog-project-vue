@@ -24,18 +24,17 @@ export default defineComponent({
       // 700px and up
       700: {
         itemsToShow: 1,
-        snapAlign: "start",
+        snapAlign: "center",
       },
       // 800px and up
       850: {
         itemsToShow: 2,
         snapAlign: "start",
       },
-      // 1024 and up
-      1024: {
+      1320:{  
         itemsToShow: 3,
         snapAlign: "start",
-      },
+      }
     },
   }),
   props: ["articoli"],

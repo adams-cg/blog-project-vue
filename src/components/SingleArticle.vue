@@ -25,9 +25,9 @@
                             <div class="text-white pb-[20px] h-full flex items-end text-center">
                                 {{ resume }}
                             </div>
-                            <button
+                            <RouterLink :to="{path:'/articolo/' + slug}"><button
                                 class=" p-[10px] mb-[10px] w-[120px] bg-yellow-400 text-center  rounded-2xl animate-bounce hover:animate-none hover:bg-opacity-20 hover:text-white hover:border-[1px] hover:border-yellow-400 hover:duration-700 font-semibold">Scopri
-                                di più</button>
+                                di più</button></RouterLink>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ export default {
         }
 
     },
-    props: ["titolo", "autore", "resume", "img"
+    props: ["titolo", "autore", "resume", "img", "slug"
     ],
 
     methods: {

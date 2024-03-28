@@ -1,16 +1,16 @@
 <template>
   <main class="px-[24px]">
     <!-- TODO: sezione articolo in evidenza -->
-    <section class="flex w-full justify-around items-center mb-[200px] pt-40">
+    <section class="flex w-full flex-col justify-around items-center mb-[200px] pt-40 lg:flex-row">
       <div>
         <p class="text-[80px] font-bold">
           {{ title }}
         </p>
-        <p class="text-[30px] font-semibold">
+        <p class="text-[30px] font-semibold ml-2">
           {{ text }}
         </p>
 
-        <button class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px]">
+        <button class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px] mb-10 lg:mb-0">
           Scopri di più
         </button>
       </div>
@@ -40,8 +40,6 @@ import { Carousel, Navigation, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import CarouselArticoli from "../components/CarouselArticoli.vue";
 import sanity from "../../sanity.js";
-import imageUrlBuilder from "@sanity/image-url";
-const builder = imageUrlBuilder(sanity);
 const query = `*[_type == "post"]{
   title,
   author->{name},
@@ -52,7 +50,7 @@ const query = `*[_type == "post"]{
   publishedAt,
   categories[0]->{title},
   resume[0]{children[0]{text}},
-} | order(publishedAt asc)`;
+} | order(publishedAt desc)`;
 
 export default defineComponent({
   name: "Breakpoints",
@@ -83,9 +81,13 @@ export default defineComponent({
       },
       // 1024 and up
       1024: {
-        itemsToShow: 5,
+        itemsToShow: 4,
         snapAlign: "start",
       },
+      1320:{  
+        itemsToShow: 5,
+        snapAlign: "start",
+      }
     },
     images: [
       "src/assets/logos_html-5.png",
@@ -109,9 +111,6 @@ export default defineComponent({
     this.fetchData();
   },
   methods: {
-    urlFor(source) {
-      return builder.image(source);
-    },
     fetchData() {
       this.error = this.post = null;
       this.loading = true;
@@ -119,9 +118,9 @@ export default defineComponent({
         (content) => {
           this.loading = false;
           this.content = content;
-          this.title = content[content.length - 1].title;
-          this.text = content[content.length - 1].resume.children.text;
-          this.urlImage = content[content.length - 1].mainImage.asset.url
+          this.title = content[0].title;
+          this.text = content[0].resume.children.text;
+          this.urlImage = content[0].mainImage.asset.url
 
         },
         (error) => {

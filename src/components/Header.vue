@@ -8,16 +8,18 @@
             <!-- navigazione -->
             <div class="flex text-[20px] lg:gap-8 font-semibold">
                 <RouterLink to="/">
-                    <button class="hidden lg:block">Home</button>
+                    <button class="hidden lg:block" @click="menuArticle=false">Home</button>
                 </RouterLink>
-                <RouterLink to="/article">
-                    <button class="hidden lg:block">Articoli</button>
-                </RouterLink>
+                <button class="hidden lg:block" @click="articleMenu">Articoli</button>
+                <button class="hidden lg:block" @click="articleMenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-[-30px] mt-[6px]">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg>
+</button>
                 <RouterLink to="/guides">
-                    <button class="hidden lg:block">Guide</button>
+                    <button class="hidden lg:block"  @click="menuArticle=false">Guide</button>
                 </RouterLink>
                 <RouterLink to="/about">
-                    <button class="hidden lg:block">About Us</button>
+                    <button class="hidden lg:block"  @click="menuArticle=false">About Us</button>
                 </RouterLink>
             </div>
             <!-- logo aziendale -->
@@ -39,25 +41,51 @@
         </nav>
         <Transition name="slide-fade">
             <div v-if="!menu"
-                class="bg-purple-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
+                class="bg-slate-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
 
                 <div class="text-black flex flex-col gap-3 py-5">
                     <RouterLink to="/">
-                        <button>Home</button>
+                        <button @click="menu=true">Home</button>
                     </RouterLink>
-                    <RouterLink to="/article">
-                        <button>Articoli</button>
+                    <RouterLink to="/articoli">
+                        <button @click="menu=true">Articoli</button>
                     </RouterLink>
                     <RouterLink to="/guides">
-                        <button>Guide</button>
+                        <button @click="menu=true">Guide</button>
                     </RouterLink>
                     <RouterLink to="/about">
-                        <button>About Us</button>
+                        <button @click="menu=true">About Us</button>
                     </RouterLink>
                 </div>
 
             </div>
         </Transition>
+        <Transition name="slide-fade">
+            <div :class="{'hidden': !menuArticle,'block':menuArticle}"
+                class="bg-slate-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
+
+                <div class="text-black flex flex-col gap-3 py-5">
+                    <RouterLink to="/articoli">
+                        <button @click="menuArticle=false">Articoli</button>
+                    </RouterLink>
+                    <RouterLink to="">
+                        <button @click="menuArticle=false">Front End</button>
+                    </RouterLink>
+                    <RouterLink to="">
+                        <button @click="menuArticle=false">Back End</button>
+                    </RouterLink>
+                    <RouterLink to="">
+                        <button @click="menuArticle=false">CMS</button>
+                    </RouterLink>
+                    <RouterLink to="">
+                        <button @click="menuArticle=false">AI</button>
+                    </RouterLink>
+                </div>
+
+            </div>
+        </Transition>
+
+
     </header>
 
 
@@ -71,15 +99,16 @@ export default {
         return {
             menu: true,
             scrollPosition: 0,
+            menuArticle: false
         }
     },
     methods: {
         showMenu() {
             this.menu = !this.menu
-        }
-
-
-
+        },
+        articleMenu(){  
+            this.menuArticle=!this.menuArticle
+        },
     }
 
 }
