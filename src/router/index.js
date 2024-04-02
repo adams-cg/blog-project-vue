@@ -5,6 +5,10 @@ import GuideView from "../views/GuideView.vue";
 import Page404 from "../views/Page404.vue";
 import Articoli from "../views/Articoli.vue";
 import Articolo from "../views/Articolo.vue";
+import FrontEnd from "../views/FrontEnd.vue";
+import AI from "../views/AI.vue";
+import Backend from "../views/BackEnd.vue";
+import CMS from "../views/Cms.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,10 +39,30 @@ const router = createRouter({
       component: Page404,
     },
     {
-      path: "/articolo/:slug",
+      path: "/articoli/:slug",
       name: "articolo",
       component: Articolo,
-    }
+    },
+    {
+      path: "/frontend",
+      name: "frontEnd",
+      component: FrontEnd,
+    },
+    {
+      path: "/backend",
+      name: "backEnd",
+      component: Backend,
+    },
+    {
+      path: "/cms",
+      name: "CMS",
+      component: CMS,
+    },
+    {
+      path: "/ai",
+      name: "AI",
+      component: AI,
+    },
   ],
 });
 

@@ -31,7 +31,7 @@
               >
                 {{ resume }}
               </div>
-              <RouterLink :to="{ path: '/articolo/' + slug }"
+              <RouterLink :to="{ path: '/articoli/' + slug }"
                 ><button
                   class="p-[10px] mb-[10px] w-[120px] bg-yellow-400 text-center rounded-2xl animate-bounce hover:animate-none hover:bg-opacity-20 hover:text-white hover:border-[1px] hover:border-yellow-400 hover:duration-700 font-semibold"
                 >

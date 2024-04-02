@@ -43,44 +43,47 @@
         </nav>
         <Transition name="slide-fade">
             <div v-if="!menu"
-                class="bg-slate-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
+                class="bg-slate-400 flex justify-start pl-4 text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
 
-                <div class="text-black flex flex-col gap-3 py-5  md:flex-row">
+                <div class="text-black flex flex-col w-full gap-3 py-5 md:hidden">
                     <RouterLink to="/">
-                        <button @click="menu = true">Home</button>
+                        <button @click="menu = true" class="py-8 ">Home</button>
                     </RouterLink>
                     <RouterLink to="/articoli">
-                        <button @click="menu = true">Articoli</button>
+                        <button @click="menu = true" class="py-8  ">Articoli<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-flex ml-4 mb-[5px]">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>
+</button>
                     </RouterLink>
                     <RouterLink to="/guides">
-                        <button @click="menu = true">Guide</button>
+                        <button @click="menu = true" class="py-8 ">Guide</button>
                     </RouterLink>
                     <RouterLink to="/about">
-                        <button @click="menu = true">About Us</button>
+                        <button @click="menu = true" class="py-8 ">About Us</button>
                     </RouterLink>
                 </div>
 
             </div>
         </Transition>
         <Transition name="slide-fade">
-            <div :class="{ 'hidden': !menuArticle, 'block': menuArticle }"
+            <div :class="{ 'hidden': !menuArticle, 'hidden lg:flex': menuArticle }"
                 class="bg-slate-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
 
-                <div class="text-black flex flex-col gap-3 py-5  lg:flex-row">
+                <div class="text-black flex flex-col gap-3 py-5 ml-[-48px] lg:flex-row">
                     <RouterLink to="/articoli">
-                        <button @click="menuArticle = false">Articoli</button>
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Articoli</button>
                     </RouterLink>
-                    <RouterLink to="">
-                        <button @click="menuArticle = false">Front End</button>
+                    <RouterLink to="/frontend">
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Front End</button>
                     </RouterLink>
-                    <RouterLink to="">
-                        <button @click="menuArticle = false">Back End</button>
+                    <RouterLink to="/backend">
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Back End</button>
                     </RouterLink>
-                    <RouterLink to="">
-                        <button @click="menuArticle = false">CMS</button>
+                    <RouterLink to="/cms">
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">CMS</button>
                     </RouterLink>
-                    <RouterLink to="">
-                        <button @click="menuArticle = false">AI</button>
+                    <RouterLink to="/ai">
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">AI</button>
                     </RouterLink>
                 </div>
 
