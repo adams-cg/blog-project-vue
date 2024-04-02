@@ -2,13 +2,13 @@
   <main class="px-[24px]">
     <!-- TODO: sezione articolo in evidenza -->
     <section
-      class="flex w-full flex-col justify-around items-center mb-[200px] pt-40 lg:flex-row"
+      class="flex w-full flex-col justify-center items-center mb-[200px] pt-40 md:justify-around md:flex-row"
     >
       <div>
-        <p class="text-[80px] font-bold">
+        <p class="text-[50px] font-bold md:text-[60px] lg:text-[80px] ">
           {{ title }}
         </p>
-        <p class="text-[30px] font-semibold ml-2">
+        <p class=" text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
           {{ text }}
         </p>
 
@@ -19,7 +19,7 @@
         </button></RouterLink>
       </div>
 
-      <img :src="urlImage" class="col-span-full" />
+      <img :src="urlImage" class="col-span-full w-[300px] h-[300px]" />
     </section>
 
     <Carousel

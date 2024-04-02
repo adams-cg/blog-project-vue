@@ -3,7 +3,7 @@
         <nav class="w-screen flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
-                <p class="text-[25px] lg:text-[30px] font-extrabold">&lt;B.log()&gt;</p>
+                <RouterLink to="/"><p class="text-[25px] lg:text-[30px] font-extrabold">&lt;B.log()&gt;</p></RouterLink>
             </div>
             <!-- navigazione -->
             <div class="flex text-[20px] lg:gap-8 font-semibold">
