@@ -1,9 +1,9 @@
 <template>
-    <header class="bg-white text-black shadow-lg fixed z-50  h-[100px]  flex flex-col justify-center items-center">
+    <header class="bg-white text-black shadow-lg  rounded-b-[50px] fixed z-50  h-[100px]  flex flex-col justify-center items-center">
         <nav class="w-screen flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
-                <RouterLink to="/"><p class="text-[25px] lg:text-[30px] font-extrabold">&lt;B.log()&gt;</p></RouterLink>
+                <RouterLink to="/"><p class="pl-3 text-[25px] lg:text-[30px] font-extrabold">&lt;B.log()&gt;</p></RouterLink>
             </div>
             <!-- navigazione -->
             <div class="flex text-[20px] lg:gap-8 font-semibold">
@@ -28,8 +28,8 @@
             <div>
                 <p class="hidden lg:block lg:text-[30px] font-extrabold">&lt;Adams CG/&gt;</p>
             </div>
-            <div class="lg:hidden flex items-center">
-                <button class="w-6 h-6" @click="showMenu">
+            <div class="pr-6 lg:hidden flex items-center">
+                <button class="w-7 h-7" @click="showMenu">
                     <svg v-if="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000"
                             d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
@@ -43,23 +43,23 @@
         </nav>
         <Transition name="slide-fade">
             <div v-if="!menu"
-                class="bg-slate-400 flex justify-start pl-4 text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
+                class="bg-slate-300 bg-opacity-30 backdrop-blur-lg  mt-4 ml-[-13px] flex rounded-[30px] justify-center px-4 text-[22px]  w-[97%] top-[100px] absolute font-semibold lg:gap-8">
 
-                <div class="text-black flex flex-col w-full gap-3 py-5 md:hidden">
+                <div class="text-black flex flex-col gap-3 py-10 md:hidden">
                     <RouterLink to="/">
-                        <button @click="menu = true" class="py-8 ">Home</button>
+                        <button @click="menu = true" class="">Home</button>
                     </RouterLink>
                     <RouterLink to="/articoli">
-                        <button @click="menu = true" class="py-8  ">Articoli<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-flex ml-4 mb-[5px]">
+                        <button @click="menu = true" class="">Articoli<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-flex ml-4 mb-[5px]">
   <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
 </button>
                     </RouterLink>
                     <RouterLink to="/guides">
-                        <button @click="menu = true" class="py-8 ">Guide</button>
+                        <button @click="menu = true" class="">Guide</button>
                     </RouterLink>
                     <RouterLink to="/about">
-                        <button @click="menu = true" class="py-8 ">About Us</button>
+                        <button @click="menu = true" class="">About Us</button>
                     </RouterLink>
                 </div>
 
@@ -67,9 +67,9 @@
         </Transition>
         <Transition name="slide-fade">
             <div :class="{ 'hidden': !menuArticle, 'hidden lg:flex': menuArticle }"
-                class="bg-slate-400 flex justify-center text-[20px] leading-4 w-full top-[100px] absolute font-semibold lg:gap-8">
+                class="bg-slate-300 bg-opacity-30 backdrop-blur-lg  flex justify-center mt-[12px] rounded-[30px] text-[20px] leading-4 w-[98%] ml-[-15px] top-[100px] absolute font-semibold lg:gap-8">
 
-                <div class="text-black flex flex-col gap-3 py-5 ml-[-48px] lg:flex-row">
+                <div class="text-black flex flex-col gap-3  py-5 ml-[-26px] lg:flex-row">
                     <RouterLink to="/articoli">
                         <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Articoli</button>
                     </RouterLink>

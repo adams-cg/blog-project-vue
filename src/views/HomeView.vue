@@ -2,7 +2,7 @@
   <main class="px-[24px]">
     <!-- TODO: sezione articolo in evidenza -->
     <section
-      class="flex w-full flex-col justify-center items-center mb-[200px] pt-40 md:justify-around md:flex-row"
+      class="flex w-full flex-col justify-center items-center mb-[50px] pt-40 md:justify-around md:flex-row"
     >
       <div>
         <p class="text-[50px] font-bold md:text-[60px] lg:text-[80px] ">
@@ -26,7 +26,7 @@
       v-bind="settings"
       :wrap-around="true"
       :breakpoints="breakpoints"
-      class="mb-[200px]"
+      class="mb-[60px]"
     >
       <Slide v-for="(image, index) in images" :key="index">
         <div

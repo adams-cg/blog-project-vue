@@ -1,6 +1,6 @@
 <template>
-  <ul class="px-[24px] grid gap-10 lg:grid-cols-2 lg:gap-0 xl:grid-cols-3">
-    <li v-for="post in content" class="pt-40">
+  <ul class="pt-20 grid  gap-8 lg:grid-cols-2 xl:grid-cols-3">
+    <li v-for="post in content" class="pt-20 mt-[20px]">
       <SingleArticle
         :slug="post.slug.current"
         :autore="post.author.name"
