@@ -12,7 +12,7 @@
           {{ text }}
         </p>
 
-        <RouterLink :to="{ path: '/articolo/' + slug }"><button
+        <RouterLink :to="{ path: '/articoli/' + slug }"><button
           class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px] mb-10 lg:mb-0"
         >
           Scopri di più
