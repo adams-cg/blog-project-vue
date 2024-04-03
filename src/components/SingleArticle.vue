@@ -16,7 +16,7 @@
       <div>
         <!-- bg image -->
         <div
-          class="w-[400px] h-[600px] rounded-[30px] bg-cover"
+          class="w-[400px] h-[600px] rounded-[30px] bg-center bg-cover"
           :style="{ 'background-image': 'url(' + img + ')' }"
         >
           <!-- article/button -->

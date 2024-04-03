@@ -1,19 +1,32 @@
 <template>
-  <div class="flex flex-col justify-start items-star px-[24px]">
-    <div>
-      <h1 class="text-[25px] text-black mt-[100px] font-bold">{{ title }}</h1>
-    </div>
-    <div>
-      <h1 class="text-[20px]">{{ author }}</h1>
-    </div>
-    <img :src="urlImage" alt="" class="w-[100px] h-[100px]" />
-    <div>
-      <p class="text-[18px]">{{ text }}</p>
-    </div>
-    <div>
-      <p class="text-[18px]">{{ publishedAt }}</p>
+  
+<div class="flex flex-col md:flex-row justify-center pt-[180px] md:pt-[100px] lg:pt-[150px] md:ml-[-30px] w-screen">
+
+
+  
+  <div class="flex justify-center md:block">
+    <img :src="urlImage" alt="" class="hidden md:block w-[400px] h-[600px] xl:mt-[25px] rounded-[30px] object-cover md:scale-75 lg:scale-90 xl:scale-95">
+
+    <!-- mobile img -->
+    <div class="relative md:hidden w-screen mt-[-80px]">
+      <img :src="urlImage" alt="" class="w-screen h-[190px] object-cover">
+      <div class="absolute top-0 bg-gradient-to-t from-[rgb(255,255,255)]  to-[#0000003c] w-screen h-[190px] "></div>
+
     </div>
   </div>
+
+  <div class="mt-[10px] w-screen px-[8%] md:px-0 lg:ml-[50px] xl:ml-[100px] md:mt-[55px] lg:mt-0 xl:mt-0 2xl:mt-0 md:w-[45%]">
+    <h1 class="text-[40px] mb-[20px] md:mb-0 text-center md:text-left md:text-[35px] lg:text-[45px] xl:text-[50px] font-bold">{{ title }}</h1>
+    <p class="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[23px]">{{ text }} Lorem ipsum dolor sit amet consectetur adipisicing elit. At recusandae vel laborum eveniet amet incidunt, animi, molestiae possimus quaerat atque culpa rerum a. Quasi tempore similique porro voluptates quibusdam nostrum cupiditate dolores ipsa in minima sed aliquam maxime possimus nobis quod, ut dicta? Optio velit maxime facere quaerat laboriosam? Provident quia vel dolorem minus incidunt, nam dolor, cumque nostrum ipsum inventore rem? Dignissimos illo voluptas, cupiditate cum voluptate eius nulla molestiae impedit, recusandae similique debitis accusantium! Tempore veritatis placeat blanditiis voluptas perspiciatis qui dolorum. Fugit, nisi fugiat non veniam odit atque, ad delectus dolore esse in dignissimos libero similique doloribus. Exercitationem consequuntur quam reprehenderit aliquid minus laborum! Eveniet, fugiat debitis. Eveniet, unde provident libero adipisci quis magni repudiandae ex iure quasi. Voluptatibus at expedita delectus eum totam nemo facere. Tempore ratione officia soluta quaerat id, nemo er</p>
+  </div>
+</div>
+
+
+<div class="flex justify-end items-center mt-[50px] md:mt-[80px] mb-[100px] mr-[50px]">
+  <h1 class="text-[17px] lg:mr-[15px] lg:text-[20px] font-semibold">{{ author }}</h1>
+  <p class="md:text-[14px] ml-[10px] lg:text-[17px] lg:mt-[4px]">{{ publishedAt }}</p>
+</div>
+
 </template>
 
 <script>
