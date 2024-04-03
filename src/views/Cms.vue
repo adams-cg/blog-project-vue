@@ -16,7 +16,7 @@
 import SingleArticle from "../components/SingleArticle.vue";
 import { defineComponent } from "vue";
 import sanity from "../../sanity.js";
-const query= `*[_type == "post" && categories[]->title match "Front End"]{
+const query= `*[_type == "post" && categories[]->title match "CMS"]{
   title,
   slug{current},
   author->{name},
