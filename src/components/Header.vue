@@ -41,20 +41,19 @@
                 </button>
             </div>
         </nav>
+        <!-- Menu da mobile principale -->
         <Transition name="slide-fade">
             <div v-if="!menu"
                 class="bg-slate-300 bg-opacity-30 backdrop-blur-lg  mt-4 ml-[-13px] flex rounded-[30px] justify-center px-4 text-[22px]  w-[97%] top-[100px] absolute font-semibold lg:gap-8">
 
-                <div class="text-black flex flex-col gap-3 py-10 md:hidden">
+                <div v-if="!menuSubArticle" class="text-black flex flex-col gap-3 py-10 md:hidden">
                     <RouterLink to="/">
                         <button @click="menu = true" class="">Home</button>
                     </RouterLink>
-                    <RouterLink to="/articoli">
-                        <button @click="menu = true" class="">Articoli<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-flex ml-4 mb-[5px]">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-</svg>
-</button>
-                    </RouterLink>
+                    <button @click="subArticleMenu" class="">Articoli<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-flex ml-4 mb-[5px]">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
                     <RouterLink to="/guides">
                         <button @click="menu = true" class="">Guide</button>
                     </RouterLink>
@@ -62,9 +61,32 @@
                         <button @click="menu = true" class="">About Us</button>
                     </RouterLink>
                 </div>
-
-            </div>
+                <!-- sottomenu articoli  -->
+                <Transition name="slide-fade">
+                <div v-if="menuSubArticle"  class="text-black  text-center flex flex-col gap-3 py-10 md:hidden">
+                    <div><button @click="menuSubArticle= false,menu=true" class="">Articoli</button></div>
+                    <RouterLink to="/articoli">
+                        <button @click="menuSubArticle= false, menu=true" class="">Generale</button>
+                    </RouterLink>
+                    <RouterLink to="/frontend">
+                        <button @click="menuSubArticle= false,menu=true" class="">Front End</button>
+                    </RouterLink>
+                    
+                    <RouterLink to="/backend">
+                        <button @click="menuSubArticle= false,menu=true" class="">Back End</button>
+                    </RouterLink>
+                    <RouterLink to="/cms">
+                        <button @click="menuSubArticle= false,menu=true" class="">CMS</button>
+                    </RouterLink>
+                    <RouterLink to="/ai">
+                        <button @click="menuSubArticle= false,menu=true" class="">AI</button>
+                    </RouterLink>
+                </div>
+            </Transition>
+        </div>
         </Transition>
+        
+        <!-- Menu secondario da desktop di articoli -->
         <Transition name="slide-fade">
             <div :class="{ 'hidden': !menuArticle, 'hidden lg:flex': menuArticle }"
                 class="bg-slate-300 bg-opacity-30 backdrop-blur-lg  flex justify-center mt-[12px] rounded-[30px] text-[20px] leading-4 w-[98%] ml-[-15px] top-[100px] absolute font-semibold lg:gap-8">
@@ -104,16 +126,23 @@ export default {
         return {
             menu: true,
             scrollPosition: 0,
-            menuArticle: false
+            menuArticle: false,
+            menuSubArticle: false
         }
     },
     methods: {
         showMenu() {
             this.menu = !this.menu
+            if(this.menuSubArticle){  
+                this.menuSubArticle=false
+            }
         },
         articleMenu() {
             this.menuArticle = !this.menuArticle
         },
+        subArticleMenu(){  
+            this.menuSubArticle = !this.menuSubArticle
+        }
     }
 
 }
