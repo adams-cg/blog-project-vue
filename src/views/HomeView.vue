@@ -13,13 +13,13 @@
         </p>
 
         <RouterLink :to="{ path: '/articoli/' + slug }"><button
-          class="mt-[50px] border-[2px] border-black rounded-2xl p-2 w-[160px] font-semibold text-[20px] mb-10 lg:mb-0"
+          class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0"
         >
           Scopri di più
         </button></RouterLink>
       </div>
 
-      <img :src="urlImage" class="col-span-full w-[300px] h-[300px]" />
+      <RouterLink :to="{ path: '/articoli/' + slug }"><img :src="urlImage" class="col-span-full w-[300px] h-[300px]" /></RouterLink>
     </section>
 
     <Carousel
