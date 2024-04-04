@@ -44,6 +44,11 @@ export default defineComponent({
     publishedAt: "",
     author: "",
     query: "",
+    options : {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+}
   }),
   created() {
     this.fetchData();
@@ -70,7 +75,7 @@ export default defineComponent({
           this.text = content[0].body.children.text;
           this.author = content[0].author.name;
           this.urlImage = this.urlFor(content[0].mainImage.asset._ref);
-          this.publishedAt = content[0].publishedAt;
+          this.publishedAt =new Date(content[0].publishedAt).toLocaleDateString("it-IT",this.options);
         },
         (error) => {
           this.error = error;

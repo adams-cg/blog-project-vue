@@ -45,7 +45,7 @@
         <Transition name="slide-fade">
             <div v-if="!menu"
                 class="bg-slate-300 bg-opacity-30 backdrop-blur-lg  mt-4 ml-[-13px] flex rounded-[30px] justify-center px-4 text-[22px]  w-[97%] top-[100px] absolute font-semibold lg:gap-8">
-
+                <Transition name="slide-fade">
                 <div v-if="!menuSubArticle" class="text-black flex flex-col gap-3 py-10  lg:hidden">
                     <RouterLink to="/">
                         <button @click="menu = true" class="">Home</button>
@@ -60,14 +60,14 @@
                     <RouterLink to="/about">
                         <button @click="menu = true" class="">About Us</button>
                     </RouterLink>
-                </div>
+                </div></Transition>
                 <!-- sottomenu articoli  -->
-                
+                <Transition name="slide-fade">
                 <div v-if="menuSubArticle"  class="text-black  text-center flex flex-col gap-3 transition-0 py-10 lg:hidden">
                     
-<button @click="subArticleMenu" class="underline underline-offset-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute top-[46px] ml-[-20px]">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-</svg>Articoli</button>
+                    <button @click="subArticleMenu" class="underline underline-offset-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute top-[46px] ml-[-20px]">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>Articoli</button>
                     <RouterLink to="/articoli">
                         <button @click="menuSubArticle= false, menu=true" class="">Generale</button>
                     </RouterLink>
@@ -85,8 +85,8 @@
                         <button @click="menuSubArticle= false,menu=true" class="">AI</button>
                     </RouterLink>
                 </div>
-            
-        </div>
+                </Transition>
+            </div>
         </Transition>
         
         <!-- Menu secondario da desktop di articoli -->
