@@ -68,21 +68,21 @@
                     <button @click="subArticleMenu" class="underline underline-offset-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute top-[46px] ml-[-20px]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                         </svg>Articoli</button>
-                    <RouterLink to="/articoli">
-                        <button @click="menuSubArticle= false, menu=true" class="">Generale</button>
-                    </RouterLink>
                     <RouterLink to="/frontend">
-                        <button @click="menuSubArticle= false,menu=true" class="">Front End</button>
+                        <button @click="menuSubArticle= false, menu=true" class="">Front End </button>
                     </RouterLink>
-                    
                     <RouterLink to="/backend">
                         <button @click="menuSubArticle= false,menu=true" class="">Back End</button>
                     </RouterLink>
+                    
                     <RouterLink to="/cms">
                         <button @click="menuSubArticle= false,menu=true" class="">CMS</button>
                     </RouterLink>
                     <RouterLink to="/ai">
                         <button @click="menuSubArticle= false,menu=true" class="">AI</button>
+                    </RouterLink>
+                    <RouterLink to="/articoli">
+                        <button @click="menuSubArticle= false,menu=true" class="">Archivio</button>
                     </RouterLink>
                 </div>
                 </Transition>
@@ -94,10 +94,7 @@
             <div v-if="menuArticle" 
                 class="bg-slate-300 bg-opacity-30 backdrop-blur-lg hidden lg:flex justify-center mt-[12px] rounded-[30px] text-[20px] leading-4 w-[98%] ml-[-15px] top-[100px] absolute font-semibold lg:gap-8">
                 <div class="text-black flex flex-col gap-3  py-5 ml-[-26px] lg:flex-row">
-                    <RouterLink to="/articoli">
-                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Articoli</button>
-                    </RouterLink>
-                    <RouterLink to="/frontend">
+                   <RouterLink to="/frontend">
                         <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Front End</button>
                     </RouterLink>
                     <RouterLink to="/backend">
@@ -108,6 +105,9 @@
                     </RouterLink>
                     <RouterLink to="/ai">
                         <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">AI</button>
+                    </RouterLink>
+                     <RouterLink to="/articoli">
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Archivio</button>
                     </RouterLink>
                 </div>
             </div>

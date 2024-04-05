@@ -19,7 +19,7 @@
         </button></RouterLink>
       </div>
 
-      <RouterLink :to="{ path: '/articoli/' + slug }"><img :src="urlImage" class="col-span-full w-[300px] h-[300px]" /></RouterLink>
+      <RouterLink :to="{ path: '/articoli/' + slug }"><img :src="urlImage" class="col-span-full w-[300px] h-[300px] rounded-lg" /></RouterLink>
     </section>
 
     <Carousel
@@ -35,7 +35,9 @@
           <img
             :src="image"
             alt="Slide Image"
-            class="w-[150px] h-[150px] object-contain"
+            class="w-[150px] h-[150px] object-contain hover:scale-125"
+            @mouseover="handleMouseOver(index)"
+                     @mouseleave="handleMouseLeave(index)"
           />
         </div>
       </Slide>
@@ -122,7 +124,8 @@ export default defineComponent({
     title: "",
     text: "",
     urlImage: "",
-    slug:""
+    slug:"",
+    hoveredIndex: -1
   }),
   created() {
     this.fetchData();
@@ -146,5 +149,11 @@ export default defineComponent({
       );
     },
   },
+                handleMouseOver(index) {
+                    this.hoveredIndex = index;
+                },
+                handleMouseLeave(index) {
+                    this.hoveredIndex = -1;
+                }
 });
 </script>
