@@ -1,19 +1,9 @@
 <template>
-  <ul class="pt-20 grid  gap-8 lg:grid-cols-2 xl:grid-cols-3">
-    <li v-for="post in content" class="pt-20 mt-[20px]">
-      <SingleArticle
-        :slug="post.slug.current"
-        :autore="post.author.name"
-        :resume="post.resume.children.text"
-        :titolo="post.title"
-        :img="post.mainImage.asset.url"
-      />
-    </li>
-  </ul>
+  <Pagination :items="items" :itemsPerPage="6"></Pagination>
 </template>
 
 <script>
-import SingleArticle from "../components/SingleArticle.vue";
+import Pagination from "../components/Pagination.vue";
 import { defineComponent } from "vue";
 import sanity from "../../sanity.js";
 const query = `*[_type == "post"]{
@@ -31,11 +21,11 @@ const query = `*[_type == "post"]{
 
 export default defineComponent({
   components: {
-    SingleArticle,
+    Pagination,
   },
   data: () => ({
+    items: [],
     loading: true,
-    content: [],
   }),
   created() {
     this.fetchData();
@@ -47,12 +37,17 @@ export default defineComponent({
       sanity.fetch(query).then(
         (content) => {
           this.loading = false;
-          this.content = content;
+          this.items = content;
         },
         (error) => {
           this.error = error;
         }
       );
+    },
+  },
+  computed: {
+    rows() {
+      return this.items.length;
     },
   },
 });
