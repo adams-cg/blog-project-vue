@@ -21,6 +21,10 @@ export default defineComponent({
     // breakpoints are mobile first
     // any settings not specified will fallback to the carousel settings
     breakpoints: {
+      430: {
+        itemsToShow: 1,
+        snapAlign: "center",
+      },
       // 700px and up
       700: {
         itemsToShow: 1,
@@ -31,7 +35,7 @@ export default defineComponent({
         itemsToShow: 2,
         snapAlign: "start",
       },
-      1320:{  
+      1320: {
         itemsToShow: 3,
         snapAlign: "start",
       }
@@ -44,13 +48,8 @@ export default defineComponent({
 <template>
   <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
     <Slide v-for="(articolo, index) in articoli" :key="index">
-      <SingleArticle
-        :autore="articolo.author.name"
-        :resume="articolo.resume.children.text"
-        :titolo="articolo.title"
-        :img="articolo.mainImage.asset.url"
-        :slug="articolo.slug.current"
-      />
+      <SingleArticle :autore="articolo.author.name" :resume="articolo.resume.children.text" :titolo="articolo.title"
+        :img="articolo.mainImage.asset.url" :slug="articolo.slug.current" />
     </Slide>
 
     <template #addons>

@@ -1,53 +1,41 @@
 <template>
   <main class="px-[24px]">
     <!-- TODO: sezione articolo in evidenza -->
-    <section
-      class="flex w-full flex-col justify-center items-center mb-[50px] pt-40 md:justify-around md:flex-row"
-    >
-      <div>
-        <p class="text-[50px] font-bold md:text-[60px] lg:text-[80px] ">
+    <section class="flex w-full flex-col justify-center items-center mb-[150px] pt-40 md:justify-around md:flex-row">
+      <div class="flex w-full flex-col justify-center items-center">
+        <p class="text-[50px] font-bold  md:text-[60px] lg:text-[80px] ">
           {{ title }}
         </p>
-        <p class=" text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
+        <p class=" text-[15px] font-semibold md:text-[25px] lg:text-[30px]">
           {{ text }}
         </p>
 
         <RouterLink :to="{ path: '/articoli/' + slug }"><button
-          class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0"
-        >
-          Scopri di più
-        </button></RouterLink>
+            class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0">
+            Scopri di più
+          </button>
+        </RouterLink>
       </div>
 
-      <RouterLink :to="{ path: '/articoli/' + slug }"><img :src="urlImage" class="col-span-full w-[300px] h-[300px] rounded-lg" /></RouterLink>
+      <RouterLink :to="{ path: '/articoli/' + slug }"><img :src="urlImage"
+          class="col-span-full w-[300px] h-[300px] rounded-lg" /></RouterLink>
     </section>
-
-    <Carousel
-      v-bind="settings"
-      :wrap-around="true"
-      :breakpoints="breakpoints"
-      class="mb-[60px]"
-    >
-      <Slide v-for="(image, index) in images" :key="index">
-        <div
-          class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg"
-        >
-          <img
-            :src="image"
-            alt="Slide Image"
-            class="w-[150px] h-[150px] object-contain hover:scale-125"
-            @mouseover="handleMouseOver(index)"
-                     @mouseleave="handleMouseLeave(index)"
-          />
-        </div>
-      </Slide>
-
-      <template #addons>
-        <Navigation />
-      </template>
-    </Carousel>
-
     <CarouselArticoli :articoli="content" />
+    <div class=" my-[150px]">
+      <h1 class="w-full text-center font-bold text-[40px] mb-14">Il nostro stack</h1>
+      <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
+        <Slide v-for="(image, index) in images" :key="index">
+          <div class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
+            <img :src="image" alt="Slide Image" class="w-[150px] h-[150px] object-contain hover:scale-125"
+              @mouseover="handleMouseOver(index)" @mouseleave="handleMouseLeave(index)" />
+          </div>
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>
   </main>
 </template>
 
@@ -124,7 +112,7 @@ export default defineComponent({
     title: "",
     text: "",
     urlImage: "",
-    slug:"",
+    slug: "",
     hoveredIndex: -1
   }),
   created() {
@@ -141,7 +129,7 @@ export default defineComponent({
           this.title = content[0].title;
           this.text = content[0].resume.children.text;
           this.urlImage = content[0].mainImage.asset.url;
-          this.slug=content[0].slug.current
+          this.slug = content[0].slug.current
         },
         (error) => {
           this.error = error;
@@ -149,11 +137,11 @@ export default defineComponent({
       );
     },
   },
-                handleMouseOver(index) {
-                    this.hoveredIndex = index;
-                },
-                handleMouseLeave(index) {
-                    this.hoveredIndex = -1;
-                }
+  handleMouseOver(index) {
+    this.hoveredIndex = index;
+  },
+  handleMouseLeave(index) {
+    this.hoveredIndex = -1;
+  }
 });
 </script>
