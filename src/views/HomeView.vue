@@ -4,16 +4,16 @@
     <section
       class="flex w-full flex-col justify-center items-center mb-[50px] pt-40 md:justify-around md:flex-row"
     >
-      <div>
-        <p class="text-[50px] font-bold md:text-[60px] lg:text-[80px] ">
+      <div class="flex flex-col justify-center items-center">
+        <p class="mb-2 text-[45px] font-bold md:text-[60px] lg:text-[80px] ">
           {{ title }}
         </p>
-        <p class=" text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
+        <p class="text-[17px] font-semibold md:text-[25px] lg:text-[30px]">
           {{ text }}
         </p>
 
         <RouterLink :to="{ path: '/articoli/' + slug }"><button
-          class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0"
+          class="mt-[35px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0"
         >
           Scopri di più
         </button></RouterLink>
