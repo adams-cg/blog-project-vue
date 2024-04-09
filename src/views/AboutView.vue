@@ -16,8 +16,6 @@
             <AboutCard nome="Antonino" cognome="Palma Esposito"
                 linkedin="https://www.linkedin.com/in/antonino-palma-esposito-6a9b382b8/"
                 github="https://github.com/AntoninoPalmaEsposito" nostraEmail="antonypalmaesposito@hotmail.com" />
-            <AboutCard nome="Marcello Andrea" cognome="Licciardello" linkedin="https://www.linkedin.com/in/kyradev-lma/"
-                github="https://github.com/KyraelDev" nostraEmail="kyrael.dev@gmail.com" />
             <AboutCard nome="Claudio" cognome="Marotta"
                 linkedin="https://www.linkedin.com/in/claudio-marotta-1a652a1a1/"
                 github="https://github.com/claudiosm10" nostraEmail="claudiosm10@outlook.it" />

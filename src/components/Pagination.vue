@@ -1,33 +1,16 @@
 <template>
   <div>
     <ul class="pt-20 grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-      <li
-        v-for="(item, index) in displayedItems"
-        :key="`${item.id}--${index}`"
-        :item="item"
-        class="pt-20 mt-[20px]"
-      >
-        <SingleArticle
-          :slug="item.slug.current"
-          :autore="item.author.name"
-          :resume="item.resume.children.text"
-          :titolo="item.title"
-          :img="item.mainImage.asset.url"
-        />
+      <li v-for="(item, index) in displayedItems" :key="`${item.id}--${index}`" :item="item" class="pt-20 mt-[20px]">
+        <SingleArticle :slug="item.slug.current" :autore="item.author.name" :resume="item.resume.children.text"
+          :titolo="item.title" :img="item.mainImage.asset.url" />
       </li>
     </ul>
-    <div class="flex justify-center item-center gap-2 text-2xl">
-      <button
-        class="border-4 border-black"
-        type="button"
-        :class="[
-          'button--link button--large',
-          { isActive: page === currentPage },
-        ]"
-        v-for="page in pages"
-        :key="page"
-        @click="changePage(page)"
-      >
+    <div class="flex justify-center item-center gap-2 text-2xl pt-20">
+      <button class="text-sm scale-150 pl-[2px]" type="button" :class="[
+        'button--link button--large',
+        { isActive: page === currentPage, 'font-bold text-[24px]': page === currentPage },
+      ]" v-for="page in pages" :key="page" @click="changePage(page)">
         {{ page }}
       </button>
     </div>
