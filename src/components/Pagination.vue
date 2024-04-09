@@ -16,13 +16,13 @@
         />
       </li>
     </ul>
-    <div class="flex justify-center item-center gap-2 text-2xl pt-20">
+    <div class="flex justify-center item-center gap-2 pt-20">
       <button
-        class="text-sm scale-150 pl-[2px]"
+        class="pl-[2px]"
         type="button"
         :class="[
           'button--link button--large',
-          { isActive: page === currentPage, 'font-bold text-[24px] scale-180':page=== currentPage},
+          { isActive: page === currentPage, 'font-bold text-[42px]':page=== currentPage},
         ]"
         v-for="page in pages"
         :key="page"
