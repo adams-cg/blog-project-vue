@@ -10,13 +10,18 @@
                 <RouterLink to="/">
                     <button class="hidden lg:block hover:underline underline-offset-8" @click="menuArticle = false">Home</button>
                 </RouterLink>
+                <div class="flex cursor-pointer gap-10" @mouseover="bounce=true" @mouseleave="bounce=false">
                 <button class="hidden lg:block" @click="articleMenu">Articoli</button>
-                <button class="hidden lg:block hover:mb-[-10px] hover:animate-bounce" @click="articleMenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                <button class="hidden lg:block" @click="articleMenu" 
+                ><svg xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                        class="w-6 h-6 ml-[-30px] mt-[6px]">
+                        class="w-6 h-6 ml-[-30px] mt-[7px]"
+                        :class="{ 'animate-bounce': bounce}"
+                        >
                         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                     </svg>
                 </button>
+                </div>
                 <RouterLink to="/guides">
                     <button class="hidden lg:block hover:underline underline-offset-8" @click="menuArticle = false">Guide</button>
                 </RouterLink>
@@ -129,7 +134,8 @@ export default {
             menu: true,
             scrollPosition: 0,
             menuArticle: false,
-            menuSubArticle: false
+            menuSubArticle: false,
+            bounce: false
         }
     },
     methods: {
@@ -144,7 +150,7 @@ export default {
         },
         subArticleMenu(){  
             this.menuSubArticle = !this.menuSubArticle
-        }
+        },
     }
 
 }

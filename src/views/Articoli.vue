@@ -1,5 +1,5 @@
 <template>
-  <Pagination :items="items" :itemsPerPage="6"></Pagination>
+  <Pagination :items="items" :itemsPerPage="1"></Pagination>
 </template>
 
 <script>
