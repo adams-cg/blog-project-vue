@@ -1,0 +1,28 @@
+<template></template>
+<script>
+export default{  
+    return:{  
+        immaginiLoghi:[  
+        "src/assets/logos_html-5.png",
+        "src/assets/logos_css-3.png",
+        "src/assets/logos_javascript.png",
+        "src/assets/logos_nodejs.png",
+        "src/assets/logos_pinia.png",
+        "src/assets/logos_sanity.png",
+        "src/assets/logos_visual-studio-code.png",
+        "src/assets/logos_vue.png",
+        "src/assets/mdi_github.png",
+        "src/assets/Vector.png",
+        "src/assets/midjourney.png",
+        "src/assets/mongo.png",
+        "src/assets/npm.png",
+        "src/assets/php.png",
+        "src/assets/python.png",
+        "src/assets/react.png",
+        "src/assets/sql.png",
+        "src/assets/vercel.png",
+        "src/assets/wordpress.png"
+        ]
+        }
+    }
+</script>
