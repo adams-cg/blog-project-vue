@@ -6,7 +6,7 @@
     <div class="flex justify-center items-center "><p class="mt-2 italic px-[80px] md:px-[150px] lg:px-[200px] text-justify text-[18px] md:text-[21px] lg:text-[22px]">La nostra documentazione completa sui linguaggi di programmazione offre un'approfondita guida per sviluppatori di ogni livello. Inoltre, forniamo roadmap specifiche per le diverse branche della programmazione, inclusi il <span class="font-bold">front-end</span>, il <span class="font-bold">back-end</span>, <span class="font-bold">l'intelligenza artificiale</span> e altro ancora. Queste roadmap delineano i percorsi consigliati per acquisire competenze e conoscenze cruciali in ciascuna area, aiutando gli sviluppatori a pianificare il loro percorso di apprendimento in modo mirato e progressivo. Indipendentemente dall'ambito di interesse, la nostra documentazione offre un prezioso supporto per chiunque voglia approfondire le proprie competenze e rimanere aggiornato sulle ultime tecnologie e best practice nel mondo della programmazione.</p></div>
     <hr class="mt-2">
     <!-- Grid delle roadmap -->
-   <CardGuide class="ml-[126px]"/>
+   <CardGuide/>
    
 </template>
 
