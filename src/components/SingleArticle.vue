@@ -4,10 +4,10 @@
       <!-- descrizione -->
       <div class="pl-[10px]">
         <!-- TITOLO -->
-        <div class="font-bold text-[30px] mb-[-5px]">{{ titolo }}</div>
+        <div class="font-semibold md:font-bold text-[30px] mb-[-5px]">{{ titolo }}</div>
 
         <div class="font-semibold pb-[10px]">
-          <span class="font-bold text-[20px] pr-[10px]">Autore:</span>
+          <span class="font-semibold md:font-bold text-[20px] pr-[10px]">Autore:</span>
           <span class="text-[18px]">{{ autore }}</span>
         </div>
       </div>

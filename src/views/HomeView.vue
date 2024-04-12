@@ -1,31 +1,76 @@
 <template>
-  <main class="px-[24px]">
-    <!-- TODO: sezione articolo in evidenza -->
-    <section class="flex w-full flex-col justify-center items-center mb-[150px] pt-40 md:justify-around md:flex-row">
-      <div class="flex w-full flex-col justify-center items-center">
-        <p class="text-[50px] font-bold  md:text-[60px] lg:text-[80px] ">
+  <main class="px-0 md:px-[24px] ">
+    <div class="w-screen h-1"></div>
+
+
+    <!-- TODO: mobile -->
+    <section class="md:hidden">
+
+      <!-- img mobile -->
+      <div class="relative md:hidden w-screen mt-[60px] ">
+        <img :src="urlImage" alt="" class="w-screen h-[190px] object-cover">
+        <div class="absolute top-[30px] bg-gradient-to-t from-[rgb(255,255,255)]  to-[#00000000] w-screen h-[160px] ">
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col justify-center items-center mt-[20px]">
+        <p class="text-[40px] font-bold  md:text-[60px] lg:text-[80px] ">
           {{ title }}
         </p>
-        <p class=" text-[15px] font-semibold md:text-[25px] lg:text-[30px]">
-          {{ text }}
+        <p class=" px-[40px] text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus excepturi iste obcaecati, doloremque eum
+          hic modi eos voluptatibus possimus quasi qui neque quas minima error eaque voluptatem asperiores dolor quam
+          nobis amet similique nihil velit magni mollitia. Voluptate repellendus quos asperiores suscipit ullam
+          quibusdam maxime. Labore libero beatae quod odit.
         </p>
 
-        <RouterLink :to="{ path: '/articoli/' + slug }"><button
+        <RouterLink :to="{ path: '/articoli/' + slug }" class=""><button
             class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0">
             Scopri di più
           </button>
         </RouterLink>
       </div>
-
-      <RouterLink :to="{ path: '/articoli/' + slug }"><img :src="urlImage"
-          class="col-span-full w-[300px] h-[300px] rounded-lg" /></RouterLink>
     </section>
-    <CarouselArticoli :articoli="content" />
-    <div class=" my-[150px]">
-      <h1 class="w-full text-center font-bold text-[40px] mb-14">Il nostro stack</h1>
+
+
+    <div class="px-[24px] md:px-0">
+
+      <!-- TODO: sezione articolo in evidenza -->
+      <section
+        class="hidden mt-[-60px] xl:mt-[-40px] 2xl:mt-[-40px]  md:flex w-full   items-center  mb-[0px]  pt-40 justify-around flex-row         scale-75">
+        <div class="flex  w-[50%] lg:w-full scale-[0.8] lg:scale-100 flex-col justify-center items-center">
+          <p class=" font-bold  ] text-[70px] ">
+            {{ title }}
+          </p>
+          <p class="  font-semibold text-[30px]">
+            {{ text }}
+          </p>
+
+          <RouterLink :to="{ path: '/articoli/' + slug }"><button
+              class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0 scale-110 lg:scale-100">
+              Scopri di più
+            </button>
+          </RouterLink>
+        </div>
+
+        <RouterLink class="ml-[30px] lg:ml-0 mr-[-150px] xl:mr-[0px]scale-75 xl:scale-100   w-[50%] " :to="{ path: '/articoli/' + slug }"><img :src="urlImage"
+            class="col-span-full   w-[400px] h-[400px] rounded-[30px] object-center object-cover" /></RouterLink>
+      </section>
+
+
+
+      <!-- // Dek-->
+      <div class="hidden md:block w-[90%] mb-[20px]  mx-auto h-[6px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
+
+      <!-- // -->
+      <div class="md:hidden w-[90%] mb-[100px] mt-[10px] mx-auto h-[4px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
+
+
+      <!-- Carosello Guide -->
+      <h1 class="w-full text-center font-bold text-[40px] md:text-[50px] lg:text-[60px] scale-75  xl:text-[75px] mb-[40px] md:mb-[20px]">Le nostre guide</h1>
       <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
         <Slide v-for="(image, index) in images" :key="index">
-          <div class="flex justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
+          <div class="flex scale-75 justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
             <img :src="image" alt="Slide Image" class="w-[150px] h-[150px] object-contain hover:scale-125"
               @mouseover="handleMouseOver(index)" @mouseleave="handleMouseLeave(index)" />
           </div>
@@ -35,9 +80,28 @@
           <Navigation />
         </template>
       </Carousel>
+
+      <!-- // Dek-->
+      <div class="hidden md:block w-[90%] mb-[20px]  mx-auto h-[6px] rounded-[50px] mt-[70px] bg-[rgba(0,0,0,0.14)]"></div>
+
+      <!-- // -->
+      <div class="md:hidden w-[90%] mb-[100px] mt-[50px]  mx-auto h-[4px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
+
+
+      <!-- Altri post -->
+      <h1 class="w-full text-center md:mb-[70px] font-bold text-[40px] md:text-[50px] lg:text-[60px] scale-75   xl:text-[75px] mb-[0px]">Ultimi articoli</h1>
+      <CarouselArticoli :articoli="content" class=" mt-[-40px]" />
+      <div class=" my-[60px]">
+
+      </div>
     </div>
   </main>
 </template>
+
+
+
+
+
 
 <script>
 import { defineComponent } from "vue";

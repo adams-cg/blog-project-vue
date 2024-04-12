@@ -1,6 +1,7 @@
 <template>
+    
     <header
-        class="bg-white text-black shadow-lg  rounded-b-[50px] fixed z-50  h-[100px] flex flex-col justify-center items-center">
+        class="bg-white text-black   shadow-lg  rounded-b-[50px] fixed z-50  h-[100px] flex flex-col justify-center items-center">
         <nav class="w-screen flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
