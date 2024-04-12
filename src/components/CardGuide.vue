@@ -4,7 +4,7 @@
       @mouseleave="handleMouseLeave()" class="overflow-hidden cursor-pointer transition-transform duration-300" :style="{
         transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)',
         zIndex: hoveredIndex === index ? 1 : 0
-      }" @click="ciao">
+      }" @click="passaggio">
       <img :src="card.imageUrl" alt="Card Image"
         class="inset-0 w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" />
     </div>
@@ -38,7 +38,7 @@ export default {
 
     };
   },
-  props: ["ciao"],
+  props: ["passaggio"],
   methods: {
     handleMouseOver(index) {
       this.hoveredIndex = index;

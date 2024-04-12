@@ -27,8 +27,7 @@
 
 
   <!-- TODO: dek sezione articolo in evidenza -->
-  <section
-    class="hidden    md:flex w-full   items-center  mb-[0px]  pt-40 justify-around flex-row         scale-75">
+  <section class="hidden    md:flex w-full   items-center  mb-[0px]  pt-40 justify-around flex-row         scale-75">
     <div class="flex  w-[50%] lg:w-full scale-[0.8] lg:scale-100 flex-col justify-center items-center">
       <p class=" font-bold  ] text-[70px] ">
         {{ title }}
@@ -178,6 +177,9 @@ export default defineComponent({
   }),
   created() {
     this.fetchData();
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
   methods: {
     fetchData() {

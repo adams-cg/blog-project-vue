@@ -36,7 +36,7 @@
     </div>
     <hr class="mt-2">
     <!-- Grid delle roadmap -->
-    <CardGuide :ciao="bas" />
+    <CardGuide :passaggio="getTarget" />
     <CardRoadmap :choice="scelta" />
 
 </template>
@@ -55,12 +55,16 @@ export default defineComponent({
 
     },
     methods: {
-        bas(target) {
+        getTarget(target) {
             console.log(target.currentTarget.id)
             this.scelta = target.currentTarget.id
 
         }
-    }
+
+    },
+    mounted() {
+        window.scrollTo(0, 0);
+    },
 }
 )
 
