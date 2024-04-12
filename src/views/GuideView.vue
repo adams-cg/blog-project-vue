@@ -7,13 +7,17 @@
     <hr class="mt-2">
     <!-- Grid delle roadmap -->
    <CardGuide/>
+   <CardRoadmap/>
    
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 import CardGuide from '../components/CardGuide.vue';
+import CardRoadmap from '../components/CardRoadmap.vue';
 export default defineComponent({
-    components:{CardGuide}
-})
+    components:{CardGuide,CardRoadmap}
+}  
+)
+
 </script>
