@@ -67,7 +67,7 @@
 
 
       <!-- Carosello Guide -->
-      <h1 class="w-full text-center font-bold text-[40px] md:text-[50px] lg:text-[60px] scale-75  xl:text-[75px] mb-[40px] md:mb-[20px]">Le nostre guide</h1>
+      <h1 class="w-full text-center font-bold text-[60px]  scale-75  xl:text-[75px] mb-[40px] md:mb-[20px]">Le nostre guide</h1>
       <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
         <Slide v-for="(image, index) in images" :key="index">
           <div class="flex scale-75 justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
@@ -89,7 +89,7 @@
 
 
       <!-- Altri post -->
-      <h1 class="w-full text-center md:mb-[70px] font-bold text-[40px] md:text-[50px] lg:text-[60px] scale-75   xl:text-[75px] mb-[0px]">Ultimi articoli</h1>
+      <h1 class="w-full text-center  font-bold text-[60px] scale-75 xl:text-[75px] mb-[70px]">Ultimi articoli</h1>
       <CarouselArticoli :articoli="content" class=" mt-[-40px]" />
       <div class=" my-[60px]">
 
