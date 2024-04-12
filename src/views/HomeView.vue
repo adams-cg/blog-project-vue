@@ -1,8 +1,5 @@
 <template>
-  <main class="px-0 md:px-[24px] ">
-    <div class="w-screen h-1"></div>
-
-
+  <main class="px-0 md:px-[24px] w-full pt-1">
     <!-- TODO: mobile -->
     <section class="md:hidden">
 
@@ -53,7 +50,8 @@
           </RouterLink>
         </div>
 
-        <RouterLink class="ml-[30px] lg:ml-0 mr-[-150px] xl:mr-[0px]scale-75 xl:scale-100   w-[50%] " :to="{ path: '/articoli/' + slug }"><img :src="urlImage"
+        <RouterLink class="ml-[30px] lg:ml-0 mr-[-150px] xl:mr-[0px]scale-75 xl:scale-100   w-[50%] "
+          :to="{ path: '/articoli/' + slug }"><img :src="urlImage"
             class="col-span-full   w-[400px] h-[400px] rounded-[30px] object-center object-cover" /></RouterLink>
       </section>
 
@@ -67,7 +65,8 @@
 
 
       <!-- Carosello Guide -->
-      <h1 class="w-full text-center font-bold text-[60px]  scale-75  xl:text-[75px] mb-[40px] md:mb-[20px]">Le nostre guide</h1>
+      <h1 class="w-full text-center font-bold text-[60px]  scale-75  xl:text-[75px] mb-[40px] md:mb-[20px]">Le nostre
+        guide</h1>
       <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
         <Slide v-for="(image, index) in images" :key="index">
           <div class="flex scale-75 justify-center items-center w-[200px] h-[200px] border-2 rounded-lg">
@@ -82,7 +81,8 @@
       </Carousel>
 
       <!-- // Dek-->
-      <div class="hidden md:block w-[90%] mb-[20px]  mx-auto h-[6px] rounded-[50px] mt-[70px] bg-[rgba(0,0,0,0.14)]"></div>
+      <div class="hidden md:block w-[90%] mb-[20px]  mx-auto h-[6px] rounded-[50px] mt-[70px] bg-[rgba(0,0,0,0.14)]">
+      </div>
 
       <!-- // -->
       <div class="md:hidden w-[90%] mb-[100px] mt-[50px]  mx-auto h-[4px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
