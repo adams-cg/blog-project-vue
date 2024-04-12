@@ -1,18 +1,9 @@
 <template>
-    <ul class="px-[24px] grid gap-10 lg:grid-cols-2 lg:gap-0 xl:grid-cols-3">
-      <li v-for="post in content" class="pt-40">
-        <SingleArticle
-          :slug="post.slug.current"
-          :autore="post.author.name"
-          :resume="post.resume.children.text"
-          :titolo="post.title"
-          :img="post.mainImage.asset.url"
-        />
-      </li>
-    </ul>
+   <Pagination :items="content" :itemsPerPage="6"></Pagination>
   </template>
 
 <script>
+import Pagination from "../components/Pagination.vue";
 import SingleArticle from "../components/SingleArticle.vue";
 import { defineComponent } from "vue";
 import sanity from "../../sanity.js";
@@ -31,6 +22,7 @@ const query= `*[_type == "post" && categories[]->title match "CMS"]{
 export default defineComponent({
   components: {
     SingleArticle,
+    Pagination
   },
   data: () => ({
     loading: true,
