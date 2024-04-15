@@ -37,7 +37,7 @@
     <hr class="mt-2">
     <!-- Grid delle roadmap -->
     <CardGuide :passaggio="getTarget" />
-    <CardRoadmap :choice="scelta" />
+    <div v-show="bool"><CardRoadmap :choice="scelta" /></div>
 
 </template>
 
@@ -50,7 +50,8 @@ export default defineComponent({
     components: { CardGuide, CardRoadmap },
     data() {
         return {
-            scelta: 0
+            scelta:0,
+            bool:false
         }
 
     },
@@ -58,6 +59,7 @@ export default defineComponent({
         getTarget(target) {
             console.log(target.currentTarget.id)
             this.scelta = target.currentTarget.id
+            this.bool=true
 
         }
 

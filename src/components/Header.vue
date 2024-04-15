@@ -28,13 +28,13 @@
                     </svg>
                 </button>
                 </div>
-                <RouterLink to="/guides">
+                <RouterLink to="/guide">
                     <button class="hidden lg:block hover:underline underline-offset-8"
                         @click="menuArticle = false">Guide</button>
                 </RouterLink>
-                <RouterLink to="/about">
+                <RouterLink to="/contatti">
                     <button class="hidden lg:block hover:underline underline-offset-8"
-                        @click="menuArticle = false">About Us</button>
+                        @click="menuArticle = false">Contatti</button>
                 </RouterLink>
             </div>
             <!-- logo aziendale -->
@@ -69,11 +69,11 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                             </svg>
                         </button>
-                        <RouterLink to="/guides">
+                        <RouterLink to="/guide">
                             <button @click="menu = true" class="">Guide</button>
                         </RouterLink>
-                        <RouterLink to="/about">
-                            <button @click="menu = true" class="">About Us</button>
+                        <RouterLink to="/contatti">
+                            <button @click="menu = true" class="">Contatti</button>
                         </RouterLink>
                     </div>
                 </Transition>
