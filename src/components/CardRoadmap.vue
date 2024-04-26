@@ -1,46 +1,14 @@
 <template>
-    <!-- Front end -->
-    <!-- <div v-if="docs.frontEnd" class="flex flex-col justify-center items-center my-4">
-        <h1 class="font-extrabold mb-4">{{ docs.frontEnd.title }}</h1>
-        <h1 class="font-mono">{{ docs.frontEnd.description }}</h1>
-    </div>
-    <div class="flex justify-center items-center">
-        <img v-for="src in docs.frontEnd.immagini" :src="src" alt="loghi linguaggi front end" class="mx-4 w-20 h-20">
-    </div> -->
-    <!-- Back end -->
-    <!-- <div v-if="docs.backEnd" class="flex flex-col justify-center items-center my-4">
-        <h1 class="font-extrabold mb-4">{{ docs.backEnd.title }}</h1>
-        <h1 class="font-mono">{{ docs.backEnd.description }}</h1>
-    </div>
-    <div class="flex justify-center items-center">
-        <img v-for="src in docs.backEnd.immagini" :src="src" alt="loghi linguaggi back end" class="mx-4 w-20 h-20">
-    </div> -->
-    <!-- AI -->
-    <!-- <div v-if="docs.AI" class="flex flex-col justify-center items-center my-4">
-        <h1 class="font-extrabold mb-4">{{ docs.AI.title }}</h1>
-        <h1 class="font-mono">{{ docs.AI.description }}</h1>
-    </div>
-    <div class="flex justify-center items-center">
-        <img v-for="src in docs.AI.immagini" :src="src" alt="loghi linguaggi AI" class="mx-4 w-20 h-20">
-    </div> -->
-    <!-- CMS -->
-    <!-- <div v-if="docs.CMS" class="flex flex-col justify-center items-center my-4">
-        <h1 class="font-extrabold" >{{ docs.CMS.title }}</h1>
-        <h1 class="font-mono">{{ docs.CMS.description }}</h1>
-    </div>
-    <div class="flex justify-center items-center">
-        <img v-for="src in docs.CMS.immagini" :key="key" :src="src" :style="{opacity:selectedImageStyle===index ? 0.4:1}" alt="loghi linguaggi CMS" class="mx-4 w-[150px] h-[100px]">
-    </div>  -->
     <div class="flex flex-col justify-center items-center pt-[80px]">
         <h1 class="font-extrabold text-center px-14 mb-4 text-[50px]"> {{ docs[choice].title }} </h1>
         <p class="font-mono text-center px-14 text-[30px]">{{ docs[choice].description }}</p>
     </div>
     <div class=" flex justify-center items-center pt-10">
         <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-col-4 justify-center items-center">
-            <img v-for="(src,index) in docs[choice].immagini" :key="index" :src="src" alt="loghi linguaggi front end"
-                     :class="{'mx-4 w-[120px] h-[120px] object-contain opacity-45 border-2 rounded-lg px-4 hover:scale-125':true,
-                                }">
-         </div>
+            <img v-for="(src, index) in docs[choice].immagini" :key="index" :src="src" alt="loghi dei linguaggi" :class="{
+                'mx-4 w-[120px] h-[120px] object-contain opacity-45 border-2 rounded-lg px-4 hover:scale-125': true,
+            }">
+        </div>
     </div>
 </template>
 <script>
@@ -94,6 +62,7 @@ export default {
                 "immagini": [
                     "src/assets/logos_sanity.png",
                     "src/assets/wordpress.png",
+                    "src/assets/drupal.png"
                 ]
             },
         ]

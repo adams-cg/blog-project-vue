@@ -32,7 +32,7 @@
       <p class=" font-bold  ] text-[70px] ">
         {{ title }}
       </p>
-      <p class="  font-semibold text-[30px]">
+      <p class="md:px-10  font-semibold text-[30px]">
         {{ text }}
       </p>
 

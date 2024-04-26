@@ -1,6 +1,7 @@
 <template>
 
-  <div class="flex flex-col md:flex-row justify-center pt-[180px] md:pt-[100px] lg:pt-[150px] md:ml-[-30px] w-screen">
+  <div
+    class="min-h-screen flex flex-col md:flex-row justify-center pt-[180px] md:pt-[100px] lg:pt-[150px] md:ml-[-30px] w-screen">
 
 
 
@@ -36,7 +37,7 @@
   </div>
 
 
-  <div class="flex justify-end items-center mt-[50px] md:mt-[80px] mb-[100px] mr-[50px]">
+  <div class="flex justify-end items-center mt-[80px] md:mt-0 mb-[100px] mr-[50px]">
     <h1 class="text-[17px] lg:mr-[15px] lg:text-[20px] font-semibold">{{ author }}</h1>
     <p class="md:text-[14px] ml-[10px] lg:text-[17px] lg:mt-[4px]">{{ publishedAt }}</p>
   </div>
