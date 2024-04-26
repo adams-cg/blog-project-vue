@@ -18,14 +18,14 @@
                 </svg>Aggiunta
             </h1>
         </div>
-        <div class="flex flex-col justify-center items-center font-extrabold text-[30px] md:text-[35px] lg:text-[40px]">
+        <div class="flex flex-col justify-center items-center font-extrabold text-[30px] md:text-[35px] lg:text-[45px] mb-[2vw]">
             <h1 class="from-slate-400 via-zinc-700 to-black bg-clip-text text-transparent bg-gradient-to-b">
                 Documentazioni
             </h1>
         </div>
-        <div class="flex justify-center items-center ">
+        <div class="flex justify-center items-center mb-[2vw]">
             <p
-                class="mt-2 italic px-[80px] md:px-[150px] lg:px-[200px] text-justify text-[18px] md:text-[21px] lg:text-[22px]">
+                class="mt-2 italic px-[80px] md:px-[150px] lg:px-[200px] text-justify text-[18px] md:text-[21px] lg:text-[25px]">
                 La nostra documentazione completa sui linguaggi di programmazione offre un'approfondita guida per
                 sviluppatori di ogni livello. Inoltre, forniamo roadmap specifiche per le diverse branche della
                 programmazione, inclusi il <span class="font-bold">front-end</span>, il <span
