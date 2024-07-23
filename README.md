@@ -42,9 +42,11 @@ Per avviare B.log() localmente con Node.js, segui questi passaggi:
    ```bash
    git clone https://github.com/tuonome/repository-di-blog.git
 2. **Installa le Dipendenze**:
+   ```bash
    cd repository-di-blog
    npm install
-3. **Avvia il Server di Sviluppo**:
+4. **Avvia il Server di Sviluppo**:
+   ```bash
    npm run serve
 Esplora e Trova ciò che Ti Interessa
 La Homepage di B.log() offre una panoramica completa di tutto il nostro contenuto, mentre le pagine dedicate ti permettono di esplorare specifiche aree di interesse senza difficoltà.
