@@ -32,7 +32,7 @@
       <p class=" font-bold  ] text-[70px] ">
         {{ title }}
       </p>
-      <p class="  font-semibold text-[30px]">
+      <p class="md:px-10  font-semibold text-[30px]">
         {{ text }}
       </p>
 
@@ -156,16 +156,16 @@ export default defineComponent({
       },
     },
     images: [
-      "src/assets/logos_html-5.png",
-      "src/assets/logos_css-3.png",
-      "src/assets/logos_javascript.png",
-      "src/assets/logos_nodejs.png",
-      "src/assets/logos_pinia.png",
-      "src/assets/logos_sanity.png",
-      "src/assets/logos_visual-studio-code.png",
-      "src/assets/logos_vue.png",
-      "src/assets/mdi_github.png",
-      "src/assets/Vector.png",
+      "public/logos_html-5.png",
+      "public/logos_css-3.png",
+      "public/logos_javascript.png",
+      "public/logos_nodejs.png",
+      "public/logos_pinia.png",
+      "public/logos_sanity.png",
+      "public/logos_visual-studio-code.png",
+      "public/logos_vue.png",
+      "public/mdi_github.png",
+      "public/Vector.png",
     ],
     loading: true,
     content: [],

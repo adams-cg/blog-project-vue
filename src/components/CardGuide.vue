@@ -18,19 +18,19 @@ export default {
 
       cards: [
         {
-          imageUrl: 'src/assets/Frontend.png',
+          imageUrl: '/public/Frontend.png',
           title: 'Front end'
         },
         {
-          imageUrl: 'src/assets/Backend.png',
+          imageUrl: '/public/Backend.png',
           title: 'Back end',
         },
         {
-          imageUrl: 'src/assets/AI.png',
+          imageUrl: '/public/AI.png',
           title: 'AI',
         },
         {
-          imageUrl: 'src/assets/CMS.png',
+          imageUrl: '/public/CMS.png',
           title: 'CMS',
         },
       ],
