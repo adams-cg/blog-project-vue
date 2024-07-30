@@ -1,27 +1,40 @@
 <template>
-    <header class="bg-white text-black shadow-lg  rounded-b-[50px] fixed z-50  h-[100px]  flex flex-col justify-center items-center">
+    
+    <header
+        class="bg-white text-black   shadow-lg  rounded-b-[50px] fixed z-50  h-[100px] flex flex-col justify-center  items-center">
         <nav class="w-screen flex justify-between items-center px-5 lg:px-16 lg:py-5 ">
             <!-- LOGO BLOG -->
             <div>
-                <RouterLink to="/"><p class="pl-3 text-[25px] lg:text-[30px] font-extrabold" @click="menuArticle = false,menu = true">&lt;B.log()&gt;</p></RouterLink>
+                <RouterLink to="/">
+                    <p class="pl-3 text-[25px] lg:text-[30px] font-extrabold" @click="menuArticle = false, menu = true">
+                        &lt;B.log()&gt;</p>
+                </RouterLink>
             </div>
             <!-- navigazione -->
             <div class="flex text-[20px] lg:gap-8 font-semibold">
                 <RouterLink to="/">
-                    <button class="hidden lg:block hover:underline underline-offset-8" @click="menuArticle = false">Home</button>
+                    <button class="hidden lg:block hover:underline underline-offset-8"
+                        @click="menuArticle = false">Home</button>
                 </RouterLink>
+                <div class="flex cursor-pointer gap-10" @mouseover="bounce=true" @mouseleave="bounce=false">
                 <button class="hidden lg:block" @click="articleMenu">Articoli</button>
-                <button class="hidden lg:block hover:mb-[-10px] hover:animate-bounce" @click="articleMenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                <button class="hidden lg:block" @click="articleMenu" 
+                ><svg xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                        class="w-6 h-6 ml-[-30px] mt-[6px]">
+                        class="w-6 h-6 ml-[-30px] mt-[7px]"
+                        :class="{ 'animate-bounce': bounce}"
+                        >
                         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                     </svg>
                 </button>
-                <RouterLink to="/guides">
-                    <button class="hidden lg:block hover:underline underline-offset-8" @click="menuArticle = false">Guide</button>
+                </div>
+                <RouterLink to="/guide">
+                    <button class="hidden lg:block hover:underline underline-offset-8"
+                        @click="menuArticle = false">Guide</button>
                 </RouterLink>
-                <RouterLink to="/about">
-                    <button class="hidden lg:block hover:underline underline-offset-8" @click="menuArticle = false">About Us</button>
+                <RouterLink to="/contatti">
+                    <button class="hidden lg:block hover:underline underline-offset-8"
+                        @click="menuArticle = false">Contatti</button>
                 </RouterLink>
             </div>
             <!-- logo aziendale -->
@@ -46,73 +59,84 @@
             <div v-if="!menu"
                 class="bg-slate-300 bg-opacity-30 backdrop-blur-lg  mt-4 ml-[-13px] flex rounded-[30px] justify-center px-4 text-[22px]  w-[97%] top-[100px] absolute font-semibold lg:gap-8">
                 <Transition name="slide-fade">
-                <div v-if="!menuSubArticle" class="text-black flex flex-col gap-3 py-10  lg:hidden">
-                    <RouterLink to="/">
-                        <button @click="menu = true" class="">Home</button>
-                    </RouterLink>
-                    <button @click="subArticleMenu" class="">Articoli<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-flex ml-4 mb-[5px]">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </button>
-                    <RouterLink to="/guides">
-                        <button @click="menu = true" class="">Guide</button>
-                    </RouterLink>
-                    <RouterLink to="/about">
-                        <button @click="menu = true" class="">About Us</button>
-                    </RouterLink>
-                </div></Transition>
+                    <div v-if="!menuSubArticle" class="text-black flex flex-col gap-3 py-10  lg:hidden">
+                        <RouterLink to="/">
+                            <button @click="menu = true" class="">Home</button>
+                        </RouterLink>
+                        <button @click="subArticleMenu" class="">Articoli<svg xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                class="w-6 h-6 inline-flex ml-4 mb-[5px]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                        <RouterLink to="/guide">
+                            <button @click="menu = true" class="">Guide</button>
+                        </RouterLink>
+                        <RouterLink to="/contatti">
+                            <button @click="menu = true" class="">Contatti</button>
+                        </RouterLink>
+                    </div>
+                </Transition>
                 <!-- sottomenu articoli  -->
                 <Transition name="slide-fade">
-                <div v-if="menuSubArticle"  class="text-black  text-center flex flex-col gap-3 transition-0 py-10 lg:hidden">
-                    
-                    <button @click="subArticleMenu" class="underline underline-offset-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute top-[46px] ml-[-20px]">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                        </svg>Articoli</button>
-                    <RouterLink to="/frontend">
-                        <button @click="menuSubArticle= false, menu=true" class="">Front End </button>
-                    </RouterLink>
-                    <RouterLink to="/backend">
-                        <button @click="menuSubArticle= false,menu=true" class="">Back End</button>
-                    </RouterLink>
-                    
-                    <RouterLink to="/cms">
-                        <button @click="menuSubArticle= false,menu=true" class="">CMS</button>
-                    </RouterLink>
-                    <RouterLink to="/ai">
-                        <button @click="menuSubArticle= false,menu=true" class="">AI</button>
-                    </RouterLink>
-                    <RouterLink to="/articoli">
-                        <button @click="menuSubArticle= false,menu=true" class="">Archivio</button>
-                    </RouterLink>
-                </div>
+                    <div v-if="menuSubArticle"
+                        class="text-black  text-center flex flex-col gap-3 transition-0 py-10 lg:hidden">
+
+                        <button @click="subArticleMenu" class="underline underline-offset-4"><svg
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6 absolute top-[46px] ml-[-20px]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>Articoli</button>
+                        <RouterLink to="/frontend">
+                            <button @click="menuSubArticle = false, menu = true" class="">Front End </button>
+                        </RouterLink>
+                        <RouterLink to="/backend">
+                            <button @click="menuSubArticle = false, menu = true" class="">Back End</button>
+                        </RouterLink>
+
+                        <RouterLink to="/cms">
+                            <button @click="menuSubArticle = false, menu = true" class="">CMS</button>
+                        </RouterLink>
+                        <RouterLink to="/ai">
+                            <button @click="menuSubArticle = false, menu = true" class="">AI</button>
+                        </RouterLink>
+                        <RouterLink to="/articoli">
+                            <button @click="menuSubArticle = false, menu = true" class="">Archivio</button>
+                        </RouterLink>
+                    </div>
                 </Transition>
             </div>
         </Transition>
-        
+
         <!-- Menu secondario da desktop di articoli -->
         <Transition name="slide-fade">
-            <div v-if="menuArticle" 
+            <div v-if="menuArticle"
                 class="bg-slate-300 bg-opacity-30 backdrop-blur-lg hidden lg:flex justify-center mt-[12px] rounded-[30px] text-[20px] leading-4 w-[98%] ml-[-15px] top-[100px] absolute font-semibold lg:gap-8">
                 <div class="text-black flex flex-col gap-3  py-5 ml-[-26px] lg:flex-row">
-                   <RouterLink to="/frontend">
-                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Front End</button>
+                    <RouterLink to="/frontend">
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Front
+                            End</button>
                     </RouterLink>
                     <RouterLink to="/backend">
-                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Back End</button>
+                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Back
+                            End</button>
                     </RouterLink>
                     <RouterLink to="/cms">
-                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">CMS</button>
+                        <button @click="menuArticle = false"
+                            class="mr-2 hover:underline hover:underline-offset-4">CMS</button>
                     </RouterLink>
                     <RouterLink to="/ai">
-                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">AI</button>
+                        <button @click="menuArticle = false"
+                            class="mr-2 hover:underline hover:underline-offset-4">AI</button>
                     </RouterLink>
-                     <RouterLink to="/articoli">
-                        <button @click="menuArticle = false" class="mr-2 hover:underline hover:underline-offset-4">Archivio</button>
+                    <RouterLink to="/articoli">
+                        <button @click="menuArticle = false"
+                            class="mr-2 hover:underline hover:underline-offset-4">Archivio</button>
                     </RouterLink>
                 </div>
             </div>
-       </Transition>
-        
+        </Transition>
+
 
 
     </header>
@@ -129,22 +153,23 @@ export default {
             menu: true,
             scrollPosition: 0,
             menuArticle: false,
-            menuSubArticle: false
+            menuSubArticle: false,
+            bounce: false
         }
     },
     methods: {
         showMenu() {
             this.menu = !this.menu
-            if(this.menuSubArticle){  
-                this.menuSubArticle=false
+            if (this.menuSubArticle) {
+                this.menuSubArticle = false
             }
         },
         articleMenu() {
             this.menuArticle = !this.menuArticle
         },
-        subArticleMenu(){  
+        subArticleMenu() {
             this.menuSubArticle = !this.menuSubArticle
-        }
+        },
     }
 
 }

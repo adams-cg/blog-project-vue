@@ -30,6 +30,9 @@ export default defineComponent({
   created() {
     this.fetchData();
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     fetchData() {
       this.error = this.post = null;

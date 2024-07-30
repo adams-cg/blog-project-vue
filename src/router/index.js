@@ -19,8 +19,8 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/about",
-      name: "about",
+      path: "/contatti",
+      name: "contatti",
       component: AboutView,
     },
     {
@@ -29,8 +29,8 @@ const router = createRouter({
       component: Articoli,
     },
     {
-      path: "/guides",
-      name: "guides",
+      path: "/guide",
+      name: "guide",
       component: GuideView,
     },
     {
