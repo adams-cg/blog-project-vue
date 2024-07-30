@@ -10,7 +10,7 @@
             <AboutCard nome="Davide" cognome="Genovese"
                 linkedin="https://www.linkedin.com/in/davide-genovese-68b9201b8/"
                 github="https://github.com/DavideGenovese" nostraEmail="davide.genovese1395@gmail.com"
-                img="public/Davide Genovese.jpg" />
+                img="public/FotoNuova.jpg" />
             <AboutCard nome="Davide" cognome="Rinna" linkedin="https://www.linkedin.com/in/davide-rinna/"
                 img="public/DavideRinna.jpeg" github="https://github.com/diseasedavide"
                 nostraEmail="rinna.davide@gmail.com" />
@@ -21,7 +21,7 @@
             <AboutCard nome="Claudio" cognome="Marotta"
                 linkedin="https://www.linkedin.com/in/claudio-marotta-1a652a1a1/"
                 github="https://github.com/claudiosm10" nostraEmail="claudiosm10@outlook.it" 
-                img="public/claudio.png"/>
+                img="public/Claudio Marotta.png"/>
             <AboutCard nome="Giuseppe" cognome="Raineri" linkedin="https://www.linkedin.com/in/giuseppe-raineri1/"
                 github="https://github.com/giuserai99" nostraEmail="giusepperaineri68@gmail.com"
                 img="public/Giuseppe Ranieri.jpeg" />
