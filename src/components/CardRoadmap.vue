@@ -36,33 +36,33 @@ export default {
                 "title": "Back-End Development",
                 "description": "Lo sviluppo back-end si occupa della parte dietro le quinte di un sito web o di un'applicazione, gestendo il server, il database e la logica di business. Gli sviluppatori back-end utilizzano linguaggi come Python, Java, PHP o Node.js per creare e gestire i servizi e le funzionalità non visibili direttamente agli utenti, come l'elaborazione dei dati, l'autenticazione degli utenti e la gestione delle operazioni server-side.",
                 "immagini": [
-                    "/public/Database.png",
-                    "/public/sql.png",
-                    "/public/mongo.png",
-                    "/public/logos_visual-studio-code.png",
-                    "/public/logos_nodejs.png",
-                    "/public/php.png",
-                    "/public/mdi_github.png",
-                    "/public/vercel.png",
+                    "/Database.png",
+                    "/sql.png",
+                    "/mongo.png",
+                    "/logos_visual-studio-code.png",
+                    "/logos_nodejs.png",
+                    "/php.png",
+                    "/mdi_github.png",
+                    "/vercel.png",
                 ]
             },
             {
                 "title": "AI",
                 "description": "L'intelligenza artificiale (AI) si riferisce alla capacità di un sistema informatico di imitare le funzioni cognitive umane, come il ragionamento, l'apprendimento e il problem solving. L'AI utilizza algoritmi complessi e dati per migliorare nel tempo le proprie prestazioni, consentendo di automatizzare compiti, prendere decisioni basate sui dati e sviluppare sistemi che possono simulare l'intelligenza umana in diversi contesti applicativi.",
                 "immagini": [
-                    "/public/logos_visual-studio-code.png",
-                    "/public/python.png",
-                    "/public/chatgpt.png",
-                    "/public/midjourney.png",
+                    "/logos_visual-studio-code.png",
+                    "/python.png",
+                    "/chatgpt.png",
+                    "/midjourney.png",
                 ]
             },
             {
                 "title": "CMS",
                 "description": "I Content Management System (CMS) sono piattaforme software che consentono la creazione, la gestione e la modifica di contenuti digitali su siti web senza richiedere conoscenze tecniche avanzate di programmazione. I CMS offrono un'interfaccia utente intuitiva per aggiungere e modificare testi, immagini, video e altri elementi. Esempi popolari di CMS includono WordPress, Joomla e Drupal, che consentono agli utenti di creare e mantenere siti web dinamici e aggiornabili in modo efficiente.",
                 "immagini": [
-                    "/public/logos_sanity.png",
-                    "/public/wordpress.png",
-                    "/public/drupal.png"
+                    "/logos_sanity.png",
+                    "/wordpress.png",
+                    "/drupal.png"
                 ]
             },
         ]

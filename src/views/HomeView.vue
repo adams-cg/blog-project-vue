@@ -12,10 +12,7 @@
       {{ title }}
     </p>
     <p class=" px-[40px] text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus excepturi iste obcaecati, doloremque eum
-      hic modi eos voluptatibus possimus quasi qui neque quas minima error eaque voluptatem asperiores dolor quam
-      nobis amet similique nihil velit magni mollitia. Voluptate repellendus quos asperiores suscipit ullam
-      quibusdam maxime. Labore libero beatae quod odit.
+      {{ text }}
     </p>
     <RouterLink :to="{ path: '/articoli/' + slug }" class=""><button
         class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0">
