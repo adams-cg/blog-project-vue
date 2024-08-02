@@ -20,7 +20,7 @@
                 img="/Antonino Palma Esposito.png" />
             <AboutCard nome="Claudio" cognome="Marotta"
                 linkedin="https://www.linkedin.com/in/claudio-marotta-1a652a1a1/"
-                github="https://github.com/claudiosm10" nostraEmail="claudiosm10@outlook.it" 
+                github="https://github.com/claudiosm10" nostraEmail="claudiusm10@gmail.com" 
                 img="/Claudio Marotta.png"/>
             <AboutCard nome="Giuseppe" cognome="Raineri" linkedin="https://www.linkedin.com/in/giuseppe-raineri1/"
                 github="https://github.com/giuserai99" nostraEmail="giusepperaineri68@gmail.com"

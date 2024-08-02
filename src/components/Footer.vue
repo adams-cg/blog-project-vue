@@ -15,7 +15,7 @@
         </div>
         <div>
             <ul class=" flex justify-center items-center text-[20px] font-thin my-4 lg:my-0">
-                <li><a href="https://github.com/adams-cg/blog-project-vue/tree/develop"><svg
+                <li><a href="https://github.com/adams-cg/blog-project-vue"><svg
                             class="scale-50 fill-black hover:fill-slate-700" width="98" height="96"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
