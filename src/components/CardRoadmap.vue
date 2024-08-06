@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col justify-center items-center pt-[80px]">
-        <h1 class="font-extrabold text-center px-14 mb-4 text-[50px]"> {{ docs[choice].title }} </h1>
-        <p class="font-mono text-center px-14 text-[30px]">{{ docs[choice].description }}</p>
+    <div class="flex flex-col justify-center items-center pt-[40px]">
+        <h1 class="font-extrabold text-center px-[40px] text-[40px] md:px-14 mb-4 md:text-[50px]"> {{ docs[choice].title }} </h1>
+        <p class="font-mono px-[40px] text-center text-[18px] md:text-center md:px-14 md:text-[30px]">{{ docs[choice].description }}</p>
     </div>
     <div class=" flex justify-center items-center pt-10">
         <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-col-4 justify-center items-center">

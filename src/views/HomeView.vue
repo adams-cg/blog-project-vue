@@ -11,11 +11,11 @@
     <p class="text-[40px] font-bold  md:text-[60px] lg:text-[80px] ">
       {{ title }}
     </p>
-    <p class=" px-[40px] text-[20px] font-semibold md:text-[25px] lg:text-[30px]">
+    <p class=" px-[40px] text-[20px] text-center font-semibold md:text-[25px] lg:text-[30px]">
       {{ text }}
     </p>
     <RouterLink :to="{ path: '/articoli/' + slug }" class=""><button
-        class="mt-[50px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0">
+        class="mt-[30px] border-[2px] border-slate-400 rounded-2xl p-2 w-[160px] hover:scale-110 hover:border-black font-semibold text-[20px] mb-10 lg:mb-0">
         Scopri di più
       </button>
     </RouterLink>
@@ -51,12 +51,12 @@
   <div class="hidden md:block w-[90%] mb-[20px]  mx-auto h-[6px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
 
   <!-- // -->
-  <div class="md:hidden w-[90%] mb-[100px] mt-[10px] mx-auto h-[4px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
+  <div class="md:hidden w-[90%] mb-[50px] mt-[10px] mx-auto h-[4px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
 
 
 
   <!-- Carosello Guide -->
-  <h1 class="w-full text-center font-bold text-[60px]  scale-75  xl:text-[75px] mb-[40px] md:mb-[20px]">Le nostre
+  <h1 class="w-full text-center font-bold text-[40px]  scale-75  xl:text-[75px] mb-[40px] md:mb-[20px]">Le nostre
     guide</h1>
   <Carousel v-bind="settings" :wrap-around="true" :breakpoints="breakpoints">
     <Slide v-for="(image, index) in images" :key="index">
@@ -78,12 +78,12 @@
   </div>
 
   <!-- // -->
-  <div class="md:hidden w-[90%] mb-[100px] mt-[50px]  mx-auto h-[4px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
+  <div class="md:hidden w-[90%] mb-[50px] mt-[50px]  mx-auto h-[4px] rounded-[50px] bg-[rgba(0,0,0,0.14)]"></div>
 
 
 
   <!-- Altri post -->
-  <h1 class="w-full text-center  font-bold text-[60px] scale-75 xl:text-[75px] mb-[70px]">Ultimi articoli</h1>
+  <h1 class="w-full text-center  font-bold text-[40px] scale-75 xl:text-[75px] mb-[70px]">Ultimi articoli</h1>
   <CarouselArticoli :articoli="content" class=" mt-[-40px]" />
   <div class=" my-[60px]">
 

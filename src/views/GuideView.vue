@@ -25,7 +25,7 @@
         </div>
         <div class="flex justify-center items-center mb-[2vw]">
             <p
-                class="mt-2 italic px-[80px] md:px-[150px] lg:px-[200px] text-justify text-[18px] md:text-[21px] lg:text-[25px]">
+                class="mt-2 italic px-[40px] md:px-[150px] lg:px-[200px] text-justify text-[18px] md:text-[21px] lg:text-[25px]">
                 La nostra documentazione completa sui linguaggi di programmazione offre un'approfondita guida per
                 sviluppatori di ogni livello. Inoltre, forniamo roadmap specifiche per le diverse branche della
                 programmazione, inclusi il <span class="font-bold">front-end</span>, il <span
@@ -40,7 +40,7 @@
                 best
                 practice nel mondo della programmazione.</p>
         </div>
-        <hr class="mt-2">
+        <hr class="my-4 md:my-2">
         <!-- Grid delle roadmap -->
         <CardGuide :passaggio="getTarget" />
         <div v-show="bool">

@@ -7,10 +7,10 @@
         <div>
             <span class="text-[30px] font-extrabold">&lt;/Adams CG&gt;</span>
         </div>
-        <div class="flex justify-center items-center">
-            <p class="font-medium my-6 lg:my-0">© 2024 Adams CG. All rights reserved.</p>
+        <div class="flex flex-col justify-center items-center md:flex-row lg:flex-row xl:flex-row">
+            <p class="font-medium my-4 lg:my-0">© 2024 Adams CG. All rights reserved.</p>
             <RouterLink to="/contatti">
-                <p class="font-semibold ml-4 underline underline-offset-4 hover:underline-offset-8 my-8 lg:my-0">Contatti</p>
+                <p class="font-semibold ml-4 underline underline-offset-4 hover:underline-offset-8 my-2 lg:my-0">Contatti</p>
             </RouterLink>
         </div>
         <div>

@@ -2,10 +2,10 @@
     <div class="mt-[100px] md:flex md:flex-col md:justify-center md:items-center lg:justify-start lg:items-start lg:mt-20">
         <!-- img -->
         <div>
-            <img :src=img alt="immagini Profilo" class="w-72 h-72 rounded-lg bg-gray-400 object-cover">
+            <img :src=img alt="immagini Profilo" class="w-[100%] md:w-72 h-72 rounded-lg bg-gray-400 object-cover">
         </div>
-        <!-- nome -->
-        <div>
+        <!-- nome desktop-->
+        <div class="hidden md:block md:py-4">
             <p class="text-[30px] font-extrabold mb-[-15px]">
                 {{ nome }}
             </p>
@@ -13,10 +13,16 @@
                 {{ cognome }}
             </p>
         </div>
-        <!-- contatti -->
-        <p class="text-[18px] font-medium mt-2 mb-1">
-            Contattami
-        </p>
+         <!-- nome mobile-->
+         <div class="py-4 flex justify-center items-center md:hidden">
+            <p class="text-[25px] font-extrabold mr-2">
+                {{ nome }}
+            </p>
+            <p class="text-[25px] font-extrabold">
+                {{ cognome }}
+            </p>
+        </div>
+        
         <!-- icone -->
         <div class=" flex flex-col">
             <!-- linkedin -->
